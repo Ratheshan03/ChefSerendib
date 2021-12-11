@@ -1324,6 +1324,26 @@ form .page .btns button.next {
     margin-top: 10px !important;
     margin-left: 5px;
   }
+
+  .home__img {
+    width: 180px;
+  }
+  .home__title {
+    font-size: var(--h1-font-size);
+  }
+
+  .steps__bg {
+    padding: 2rem 1rem;
+  }
+  .steps__card {
+    padding: 1.5rem;
+  }
+
+  .product__container {
+    grid-template-columns: 0.6fr;
+    justify-content: center;
+  }
+
   .experience__img,
   .video__container {
     padding: 0;
@@ -1589,6 +1609,19 @@ form .page .btns button.next {
     word-spacing: 2px;
   }
 
+  .steps__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product__description {
+    padding: 0 4rem;
+  }
+  .product__container {
+    grid-template-columns: repeat(2, 170px);
+    justify-content: center;
+    column-gap: 5rem;
+  }
+
   .video__container {
     display: grid;
     grid-template-columns: 0.6fr;
@@ -1750,6 +1783,16 @@ form .page .btns button.next {
     bottom: 3rem;
   }
 
+  .home__img {
+    width: 350px;
+  }
+  .home__description {
+    padding-right: 7rem;
+  }
+  .home__social {
+    top: 30%;
+  }
+
   #countdown {
     margin-bottom: -100px;
   }
@@ -1898,6 +1941,13 @@ form .page .btns button.next {
     width: 250px;
     grid-template-columns: 1fr 2fr;
     column-gap: 2rem;
+  }
+
+  .home__img {
+    width: 350px;
+  }
+  .home__description {
+    padding-right: 7rem;
   }
 
   .day,
@@ -2076,6 +2126,29 @@ form .page .btns button.next {
   .home__img1 {
     height: 740px;
     width: 100%;
+  }
+
+  .home__social {
+    right: -3rem;
+    row-gap: 4.5rem;
+  }
+  .home__social-follow {
+    font-size: var(--small-font-size);
+  }
+  .home__social-follow::after {
+    width: 1.5rem;
+    right: -60%;
+  }
+  .home__social-link {
+    font-size: 1.15rem;
+  }
+
+  .about__container {
+    column-gap: 7rem;
+  }
+
+  .scrollup {
+    right: 3rem;
   }
 
   .register {
