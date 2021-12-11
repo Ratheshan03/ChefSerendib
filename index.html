@@ -4,17 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--=============== FAVICON ===============-->
-    <link
-      rel="shortcut icon"
-      href="./packages/img/favicon.png"
-      type="image/x-icon"
-    />
+    <!-- =============== AJAX =============== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!--=============== REMIX ICONS ===============-->
+    <!-- ============= TITLE-ICON ============ -->
+    <link rel="shortcut icon" href="packages/img/icon.png" type="image/png" />
+
+    <!-- =============== REMIXICONS =============== -->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
+    />
+
+    <!-- =============== SWIPER CSS =============== -->
+    <link rel="stylesheet" href="packages/css/swiper-bundle.min.css" />
+
+    <!-- =============== CSS =============== -->
+    <link rel="stylesheet" href="packages/css/styles.css" />
+
+    <!-- =============== FONT AWESOME =============== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
 
     <!--=============== CSS ===============-->
@@ -23,15 +34,18 @@
     <title>Responsive plants website - Bedimcode</title>
   </head>
   <body>
+    <div class="preloader"></div>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="#" class="nav__logo">
-          <i class="ri-leaf-line nav__logo-icon"></i> Plantex
-        </a>
+        <div class="nav__data">
+          <a href="#"
+            ><img class="nav__logo" src="./packages/img/navLogo.png"
+          /></a>
+        </div>
 
         <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
+          <ul class="nav__list" id="menu">
             <li class="nav__item">
               <a href="#home" class="nav__link active-link">Home</a>
             </li>
@@ -39,28 +53,26 @@
               <a href="#about" class="nav__link">About</a>
             </li>
             <li class="nav__item">
-              <a href="#products" class="nav__link">Products</a>
+              <a href="#products" class="nav__link">Discover</a>
             </li>
             <li class="nav__item">
-              <a href="#faqs" class="nav__link">FAQs</a>
+              <a href="#faqs" class="nav__link">Register</a>
             </li>
             <li class="nav__item">
               <a href="#contact" class="nav__link">Contact Us</a>
             </li>
           </ul>
 
-          <div class="nav__close" id="nav-close">
-            <i class="ri-close-line"></i>
+          <div class="nav__dark">
+            <!-- Theme change button -->
+            <span class="change-theme-name">Switch Theme</span>
+            <i class="ri-moon-line change-theme" id="theme-button"></i>
           </div>
+          <i class="ri-close-line nav__close" id="nav-close"></i>
         </div>
 
-        <div class="nav__btns">
-          <!-- Theme change button -->
-          <i class="ri-moon-line change-theme" id="theme-button"></i>
-
-          <div class="nav__toggle" id="nav-toggle">
-            <i class="ri-menu-line"></i>
-          </div>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line"></i>
         </div>
       </nav>
     </header>

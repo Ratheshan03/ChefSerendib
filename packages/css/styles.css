@@ -1,5 +1,6 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -17,10 +18,18 @@
   --text-color-light: hsl(var(--hue), 4%, 55%);
   --body-color: hsl(var(--hue), 0%, 100%);
   --container-color: #fff;
+  --first-color-second: hsl(var(--hue-color), 64%, 22%);
+  --title-color: hsl(var(--hue-color), 64%, 18%);
+  --input-color: hsl(var(--hue-color), 24%, 97%);
+  --white-color: rgb(224, 224, 224);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
+  --title-font: "Raleway", sans-serif;
+  --biggest-font-size: 2.5rem;
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
@@ -35,9 +44,12 @@
 
   /*========== Margenes Bottom ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
   --mb-0-5: 0.5rem;
   --mb-0-75: 0.75rem;
   --mb-1: 1rem;
+  --mb-1-25: 1.25rem;
   --mb-1-5: 1.5rem;
   --mb-2: 2rem;
   --mb-2-5: 2.5rem;
@@ -45,11 +57,17 @@
   /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
+
+  /*========== Hover overlay ==========*/
+  --img-transition: 0.3s;
+  --img-hidden: hidden;
+  --img-scale: scale(1.1);
 }
 
 /* Responsive typography */
 @media screen and (min-width: 968px) {
   :root {
+    --biggest-font-size: 4rem;
     --big-font-size: 3.5rem;
     --h1-font-size: 2.25rem;
     --h2-font-size: 1.5rem;
@@ -97,6 +115,7 @@ h2,
 h3 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
+  font-family: var(--title-font);
 }
 
 ul {
@@ -112,14 +131,33 @@ img {
   height: auto;
 }
 
+button {
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+}
+
+.main {
+  overflow-x: hidden;
+}
+
 /*=============== THEME ===============*/
 /*========== Variables Dark theme ==========*/
+.header__dark {
+  box-shadow: -2px 0 4px rgba(14, 55, 63, 0.55);
+}
+
 body.dark-theme {
   --first-color-dark: hsl(var(--hue), 8%, 20%);
+  --first-color-second: hsl(var(--hue-color), 54%, 12%);
   --title-color: hsl(var(--hue), 4%, 95%);
   --text-color: hsl(var(--hue), 4%, 75%);
   --body-color: hsl(var(--hue), 8%, 12%);
   --container-color: hsl(var(--hue), 8%, 16%);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
 }
 
 /*========== Button Dark/Light ==========*/
@@ -127,6 +165,19 @@ body.dark-theme {
   color: var(--title-color);
   font-size: 1.15rem;
   cursor: pointer;
+}
+
+.change-theme-name {
+  font-size: var(--small-font-size);
+}
+
+.nav__dark {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+  position: absolute;
+  left: 3rem;
+  bottom: 4rem;
 }
 
 .nav__btns {
@@ -163,6 +214,9 @@ the website, in dark theme
 .section__title-center {
   font-size: var(--h2-font-size);
   margin-bottom: var(--mb-2);
+  color: var(--title-color);
+  text-align: center;
+  text-transform: capitalize;
   line-height: 140%;
 }
 
@@ -178,6 +232,7 @@ the website, in dark theme
 
 .grid {
   display: grid;
+  gap: 1.5rem;
 }
 
 .main {
@@ -193,6 +248,7 @@ the website, in dark theme
   left: 0;
   z-index: var(--z-fixed);
   transition: 0.4s; /*For animation dark mode*/
+  box-shadow: -2px 5px 9px 5px rgba(31, 32, 36, 0.55);
 }
 
 /*=============== NAV ===============*/
@@ -217,6 +273,8 @@ the website, in dark theme
   align-items: center;
   column-gap: 0.5rem;
   transition: 0.3s;
+  width: 200px;
+  height: 200px;
 }
 
 .nav__logo-icon {
@@ -230,8 +288,12 @@ the website, in dark theme
 
 .nav__toggle {
   display: inline-flex;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   cursor: pointer;
+}
+
+.nav__menu {
+  position: relative;
 }
 
 @media screen and (max-width: 767px) {
@@ -245,7 +307,7 @@ the website, in dark theme
     box-shadow: -2px 0 4px hsla(var(--hue), 24%, 15%, 0.1);
     padding: 4rem 0 0 3rem;
     border-radius: 1rem 0 0 1rem;
-    transition: 0.3s;
+    transition: 0.4s;
     z-index: var(--z-fixed);
   }
 }
@@ -256,6 +318,7 @@ the website, in dark theme
   top: 1rem;
   right: 1.25rem;
   cursor: pointer;
+  color: var(--title-color);
 }
 
 .nav__list {
@@ -266,8 +329,9 @@ the website, in dark theme
 
 .nav__link {
   color: var(--title-color);
-  font-weight: var(--font-medium);
+  font-weight: var(--font-semi-bold);
   transition: 0.3s;
+  text-transform: uppercase;
 }
 
 .nav__link:hover {
@@ -281,7 +345,13 @@ the website, in dark theme
 
 /* Change background header */
 .scroll-header {
+  background-color: var(--body-color);
   box-shadow: 0 1px 4px hsla(var(--hue), 4%, 15%, 0.1);
+}
+
+.scroll-header .nav__logo,
+.scroll-header .nav__toggle {
+  color: var(--title-color);
 }
 
 /* Active link */
@@ -853,10 +923,15 @@ the website, in dark theme
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 372px) {
   .container {
     margin-left: var(--mb-1);
     margin-right: var(--mb-1);
+  }
+
+  .nav__logo {
+    width: 90px;
+    height: 75px;
   }
 
   .home__img {
@@ -879,8 +954,100 @@ the website, in dark theme
   }
 }
 
+@media screen and (max-height: 680px) {
+  .register__container {
+    grid-template-columns: max-content;
+    justify-content: center;
+  }
+  .experience__content {
+    padding: 0;
+  }
+
+  .home__img {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+  }
+
+  .home__info {
+    width: 180px;
+    padding: 1rem;
+    bottom: 9rem;
+  }
+
+  .home__data-subtitle {
+    font-style: italic;
+    font-size: 13px !important;
+    margin-top: 20px !important;
+    margin-left: 5px;
+  }
+  .experience__img,
+  .video__container {
+    padding: 0;
+  }
+
+  .image__overlay {
+    max-height: 255px;
+  }
+
+  .video__container {
+    display: grid;
+    grid-template-columns: 0.6fr;
+    justify-content: center;
+  }
+
+  .nav__logo {
+    width: 95px;
+    height: 80px;
+  }
+
+  .day,
+  .hour,
+  .min,
+  .sec {
+    font-size: 2rem;
+    color: #457b9d;
+    padding: 22px;
+  }
+
+  .register {
+    max-width: 948px;
+    margin-left: auto;
+    align-content: center;
+    margin-right: auto;
+  }
+
+  .ex-co {
+    position: relative;
+    display: grid;
+  }
+
+  .section-f {
+    height: 85vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .imgB {
+    height: 85vh;
+  }
+
+  .contentB {
+    height: 85vh;
+  }
+
+  .container-f {
+    height: 85vh;
+  }
+}
+
 /* For medium devices */
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 372px) {
+  .nav__logo {
+    width: 95px;
+    height: 80px;
+  }
+
   .steps__container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -899,7 +1066,7 @@ the website, in dark theme
   }
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 410px) {
   body {
     margin: 0;
   }
@@ -908,6 +1075,12 @@ the website, in dark theme
     height: calc(var(--header-height) + 1.5rem);
     column-gap: 3rem;
   }
+
+  .nav__logo {
+    width: 100px;
+    height: 85px;
+  }
+
   .nav__toggle,
   .nav__close {
     display: none;
@@ -931,6 +1104,18 @@ the website, in dark theme
   .home {
     padding: 10rem 0 5rem;
   }
+
+  .home__data {
+    margin-left: 10px;
+  }
+
+  .home__data-subtitle {
+    font-size: 16px !important;
+    margin-top: 30px !important;
+    margin-left: 5px !important;
+    word-spacing: 2px;
+  }
+
   .home__container {
     align-items: center;
   }
@@ -955,7 +1140,47 @@ the website, in dark theme
 }
 
 /* For large devices */
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 765px) {
+  body {
+    margin: 0;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+  .nav__link {
+    color: var(--white-color);
+    text-transform: initial;
+  }
+  .nav__link:hover {
+    color: var(--white-color);
+  }
+  .nav__dark {
+    position: initial;
+    margin-left: 25px;
+  }
+  .nav__menu {
+    display: flex;
+    column-gap: 1rem;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+
+  .nav__logo {
+    width: 150px;
+    height: 125px;
+  }
+
+  .change-theme-name {
+    display: none;
+  }
+
   .container {
     margin-left: auto;
     margin-right: auto;
@@ -1040,7 +1265,20 @@ the website, in dark theme
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
+  .section {
+    padding: 4.8rem 0 2.5rem;
+  }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav__logo {
+    width: 190px;
+    height: 145px;
+  }
   .home__social {
     right: -3rem;
     row-gap: 4.5rem;
@@ -1062,5 +1300,126 @@ the website, in dark theme
 
   .scrollup {
     right: 3rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section {
+    padding: 4.8rem 0 2.5rem;
+  }
+
+  .container {
+    max-width: 1024px;
+  }
+
+  .nav__logo {
+    width: 190px;
+    height: 145px;
+  }
+  .home__social {
+    right: -3rem;
+    row-gap: 4.5rem;
+  }
+  .home__social-follow {
+    font-size: var(--small-font-size);
+  }
+  .home__social-follow::after {
+    width: 1.5rem;
+    right: -60%;
+  }
+  .home__social-link {
+    font-size: 1.15rem;
+  }
+
+  .about__container {
+    column-gap: 7rem;
+  }
+
+  .scrollup {
+    right: 3rem;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .container {
+    max-width: 1024px;
+  }
+  .home__img {
+    height: 740px;
+    width: 100%;
+  }
+
+  .register {
+    min-width: 77vw;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container-f {
+    background: rgba(255, 255, 255, 0.62);
+    min-width: 450px;
+  }
+
+  .section-f {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container-f {
+    background: rgba(255, 255, 255, 0.62);
+  }
+
+  .container-f .form-outer {
+    margin: 0 !important;
+  }
+
+  .progress-bar {
+    margin-bottom: -25px !important;
+  }
+
+  .image__overlay {
+    margin-right: 35px;
+    max-height: 280px;
+  }
+
+  .merch__container {
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .Merch-img {
+    height: 55vh;
+    align-items: center;
+  }
+
+  .merch__form {
+    height: 60vh;
+    max-width: 80vw;
+    background-color: var(--input-color);
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* For tall screens on mobiles y desktop*/
+@media screen and (min-height: 721px) {
+  body {
+    margin: 0;
+  }
+  .home__img {
+    height: 725px;
+  }
+  .home__data-subtitle {
+    font-style: italic;
+    margin-top: 50px;
+    font-size: 25px;
   }
 }
