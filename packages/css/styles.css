@@ -8,20 +8,24 @@
   /*========== Colors ==========*/
   /* Change favorite color to match images */
   /*Green dark 190 - Green 171 - Grren Blue 200*/
-  --hue-color: 190;
+  --hue: 152;
 
   /* HSL color mode */
-  --first-color: hsl(var(--hue-color), 64%, 22%);
-  --first-color-second: hsl(var(--hue-color), 64%, 22%);
-  --first-color-alt: hsl(var(--hue-color), 64%, 15%);
-  --title-color: hsl(var(--hue-color), 64%, 18%);
-  --text-color: hsl(var(--hue-color), 24%, 35%);
-  --text-color-light: hsl(var(--hue-color), 8%, 60%);
+  --first-color: hsl(var(--hue), 24%, 32%);
+  --first-color-second: hsl(var(--hue-color), 24%, 28%);
+  --first-color-alt: hsl(var(--hue), 24%, 28%);
+  --first-color-light: hsl(var(--hue), 24%, 66%);
+  --first-color-lighten: hsl(var(--hue), 24%, 92%);
+  --title-color: hsl(var(--hue), 4%, 15%);
+  --text-color: hsl(var(--hue), 4%, 35%);
+  --text-color-light: hsl(var(--hue), 4%, 55%);
+  --body-color: hsl(var(--hue), 0%, 100%);
   --input-color: hsl(var(--hue-color), 24%, 97%);
-  --body-color: hsl(var(--hue-color), 100%, 99%);
   --white-color: rgb(224, 224, 224);
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
+  --button-color: rgb(248, 128, 107);
+  --button-color-alt: rgb(247, 150, 133);
 
   /*========== Font and typography ==========*/
   --body-font: "Open Sans", sans-serif;
@@ -72,13 +76,14 @@
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
-  --first-color-second: hsl(var(--hue-color), 54%, 12%);
-  --title-color: hsl(var(--hue-color), 24%, 95%);
-  --text-color: hsl(var(--hue-color), 8%, 75%);
-  --input-color: hsl(var(--hue-color), 29%, 16%);
-  --body-color: hsl(var(--hue-color), 29%, 12%);
-  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
-  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+  --first-color-second: hsl(var(--hue), 8%, 20%);
+  --title-color: hsl(var(--hue), 4%, 95%);
+  --text-color: hsl(var(--hue), 4%, 75%);
+  --input-color: hsl(var(--hue), 29%, 16%);
+  --body-color: hsl(var(--hue), 8%, 12%);
+  --scroll-bar-color: hsl(var(--hue), 12%, 48%);
+  --scroll-thumb-color: hsl(var(--hue), 12%, 36%);
+  --container-color: hsl(var(--hue), 8%, 16%);
 }
 
 /*========== Button Dark/Light ==========*/
@@ -303,19 +308,19 @@ input {
 }
 
 /* Active link */
-.active-link a {
+.active-link {
   position: relative;
-  color: var(--white-color);
+  color: var(--button-color);
 }
 
-.active-link a::before {
+.active-link::after {
   content: "";
   position: absolute;
-  background-color: var(--white-color);
-  width: 100%;
-  height: 2px;
-  bottom: -0.75rem;
+  bottom: -0.5rem;
   left: 0;
+  width: 50%;
+  height: 2px;
+  background-color: var(--button-color);
 }
 
 /*=============== HOME ===============*/
@@ -367,7 +372,7 @@ input {
 }
 
 .home__info {
-  background-color: var(--first-color);
+  background-color: var(--button-color);
   display: flex;
   border-radius: 7px;
   padding: 1rem 1rem;
@@ -375,10 +380,10 @@ input {
   position: absolute;
   right: 0;
   bottom: 6rem;
-  width: 150px;
+  width: 140px;
 }
 .home__info:hover {
-  background: var(--first-color-alt);
+  background: var(--button-color-alt);
   cursor: pointer;
 }
 
@@ -397,7 +402,7 @@ input {
 /*=============== BUTTONS ===============*/
 .button {
   display: inline-block;
-  background-color: var(--first-color);
+  background-color: var(--button-color);
   color: var(--white-color);
   padding: 1rem 2rem;
   font-weight: var(--font-semi-bold);
@@ -407,7 +412,7 @@ input {
 }
 
 .button:hover {
-  background-color: var(--first-color-alt);
+  background-color: var(--button-color-alt);
 }
 
 .button--flex {
@@ -553,7 +558,7 @@ input {
 }
 
 .about__info {
-  background-color: var(--first-color);
+  background-color: var(--button-color);
   display: flex;
   border-radius: 7px;
   padding: 1rem 1rem;
@@ -562,8 +567,132 @@ input {
   width: 150px;
 }
 .about__info:hover {
-  background: var(--first-color-alt);
+  background: var(--button-color-alt);
+  color: #4e4e4e;
   cursor: pointer;
+}
+
+/*=============== STEPS ===============*/
+.steps__bg {
+  background-color: var(--button-color);
+  padding: 3rem 2rem 2rem;
+  border-radius: 1rem;
+}
+
+.steps__container {
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.steps__title {
+  color: #fff;
+}
+
+.steps__card {
+  background-color: var(--container-color);
+  padding: 2.5rem 3rem 2rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.steps__card-number {
+  display: inline-block;
+  background-color: var(--first-color-alt);
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-1-5);
+  transition: 0.3s;
+}
+
+.steps__card-title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-5);
+}
+
+.steps__card-description {
+  font-size: var(--small-font-size);
+}
+
+.steps__card:hover .steps__card-number {
+  transform: translateY(-0.25rem);
+}
+
+/*=============== QUESTIONS ===============*/
+.questions {
+  background-color: var(--first-color-lighten);
+}
+
+.questions__container {
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.questions__group {
+  display: grid;
+  row-gap: 1.5rem;
+}
+
+.questions__item {
+  background-color: var(--container-color);
+  border-radius: 0.25rem;
+}
+
+.questions__item-title {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+}
+
+.questions__icon {
+  font-size: 1.25rem;
+  color: var(--title-color);
+}
+
+.questions__description {
+  font-size: var(--smaller-font-size);
+  padding: 0 1.25rem 1.25rem 2.5rem;
+}
+
+.questions__header {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  padding: 0.75rem 0.5rem;
+  cursor: pointer;
+}
+
+.questions__content {
+  overflow: hidden;
+  height: 0;
+}
+
+.questions__item,
+.questions__header,
+.questions__item-title,
+.questions__icon,
+.questions__description,
+.questions__content {
+  transition: 0.3s;
+}
+
+.questions__item:hover {
+  box-shadow: 0 2px 8px hsla(var(--hue), 4%, 15%, 0.15);
+}
+
+/*Rotate icon, change color of titles and background*/
+.accordion-open .questions__header,
+.accordion-open .questions__content {
+  background-color: var(--first-color);
+}
+
+.accordion-open .questions__item-title,
+.accordion-open .questions__description,
+.accordion-open .questions__icon {
+  color: #fff;
+}
+
+.accordion-open .questions__icon {
+  transform: rotate(45deg);
 }
 
 /*=============== DISCOVER ===============*/
@@ -619,7 +748,7 @@ input {
 }
 
 .experience__content {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 1rem;
   justify-items: center;
   padding: 0 2rem;
@@ -662,6 +791,10 @@ input {
 
 .experience__img-one:hover {
   transform: var(--img-scale);
+}
+
+.data__description {
+  text-align: justify;
 }
 
 .image__overlay {
@@ -1228,7 +1361,7 @@ form .page .btns button.next {
   position: fixed;
   right: 1rem;
   bottom: -20%;
-  background-color: var(--first-color);
+  background-color: var(--button-color);
   padding: 0.5rem;
   display: flex;
   opacity: 0.9;
@@ -1319,6 +1452,13 @@ form .page .btns button.next {
     font-size: 1.8rem;
     color: #457b9d;
     padding: 23px;
+  }
+
+  .steps__bg {
+    padding: 2rem 1rem;
+  }
+  .steps__card {
+    padding: 1.5rem;
   }
 
   .register {
@@ -1493,6 +1633,10 @@ form .page .btns button.next {
     max-height: 255px;
   }
 
+  .steps__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .video__container {
     display: grid;
     grid-template-columns: 0.6fr;
@@ -1571,6 +1715,10 @@ form .page .btns button.next {
     display: grid;
     grid-template-columns: 0.6fr;
     justify-content: center;
+  }
+
+  .steps__container {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .register {
@@ -1770,6 +1918,34 @@ form .page .btns button.next {
     margin-bottom: var(--mb-1-5);
   }
 
+  .steps__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .steps__bg {
+    padding: 3rem 2rem;
+  }
+  .steps__card-title {
+    font-size: var(--normal-font-size);
+  }
+
+  .questions__container {
+    align-items: flex-start;
+    padding: 1rem 0 4rem;
+  }
+
+  .questions__title {
+    text-align: initial;
+  }
+  .questions__group {
+    row-gap: 2rem;
+  }
+  .questions__header {
+    padding: 1rem;
+  }
+  .questions__description {
+    padding: 0 3.5rem 2.25rem 2.75rem;
+  }
+
   .discover__container {
     width: 610px;
     margin-left: auto;
@@ -1915,12 +2091,31 @@ form .page .btns button.next {
     height: 300px;
   }
 
-  .about__img-one {
-    width: 230px;
+  .steps__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .steps__bg {
+    padding: 3.5rem 2.5rem;
+  }
+  .steps__card-title {
+    font-size: var(--normal-font-size);
   }
 
-  .about__img-two {
-    width: 290px;
+  .questions__container {
+    padding: 1rem 0 4rem;
+  }
+
+  .questions__title {
+    text-align: initial;
+  }
+  .questions__group {
+    row-gap: 2rem;
+  }
+  .questions__header {
+    padding: 1rem;
+  }
+  .questions__description {
+    padding: 0 3.5rem 2.25rem 2.75rem;
   }
 
   .discover__card {
