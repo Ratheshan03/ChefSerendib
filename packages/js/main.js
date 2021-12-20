@@ -88,6 +88,59 @@ VanillaTilt.init(document.querySelectorAll(".image__overlay"), {
   "max-glare": 0.2,
 });
 
+/*=============== QUESTIONS ACCORDION ===============*/
+const accordionItems = document.querySelectorAll(".questions__item");
+
+accordionItems.forEach((item) => {
+  const accordionHeader = item.querySelector(".questions__header");
+
+  accordionHeader.addEventListener("click", () => {
+    const openItem = document.querySelector(".accordion-open");
+
+    toggleItem(item);
+
+    if (openItem && openItem !== item) {
+      toggleItem(openItem);
+    }
+  });
+});
+
+const toggleItem = (item) => {
+  const accordionContent = item.querySelector(".questions__content");
+
+  if (item.classList.contains("accordion-open")) {
+    accordionContent.removeAttribute("style");
+    item.classList.remove("accordion-open");
+  } else {
+    accordionContent.style.height = accordionContent.scrollHeight + "px";
+    item.classList.add("accordion-open");
+  }
+};
+
+/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll("section[id]");
+
+function scrollActive() {
+  const scrollY = window.pageYOffset;
+
+  sections.forEach((current) => {
+    const sectionHeight = current.offsetHeight,
+      sectionTop = current.offsetTop - 58,
+      sectionId = current.getAttribute("id");
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document
+        .querySelector(".nav__menu a[href*=" + sectionId + "]")
+        .classList.add("active-link");
+    } else {
+      document
+        .querySelector(".nav__menu a[href*=" + sectionId + "]")
+        .classList.remove("active-link");
+    }
+  });
+}
+window.addEventListener("scroll", scrollActive);
+
 /*==================== VIDEO ====================*/
 // const videoFile = document.getElementById("video-file"),
 //   videoButton = document.getElementById("video-button"),
@@ -152,7 +205,8 @@ sr.reveal(
            .place__card,
            .experience__img-one,
            .sponsor__content,
-           .footer__data, .footer__rights`,
+           .footer__data, .footer__rights,
+           .steps__card, .product__card, .questions__group, .footer`,
   {
     origin: "top",
     interval: 100,
@@ -163,7 +217,7 @@ sr.reveal(
   `.about__data, 
            .video__description,
            .subscribe__description, 
-           .countdown__img-overlay,
+           .countdown__img-overlay, .about__img, .contact__box,
            .section-f`,
   {
     origin: "left",
@@ -174,7 +228,8 @@ sr.reveal(
   `.about__img-overlay, 
            .video__content,
            .subscribe__form,
-           .countdown__data `,
+           .countdown__data ,
+  .about__data, .contact__form`,
   {
     origin: "right",
     interval: 100,

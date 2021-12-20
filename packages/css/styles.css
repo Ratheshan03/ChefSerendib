@@ -26,6 +26,7 @@
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
   --button-color: rgb(248, 128, 107);
   --button-color-alt: rgb(247, 150, 133);
+  --container-color: #fff;
 
   /*========== Font and typography ==========*/
   --body-font: "Open Sans", sans-serif;
@@ -195,7 +196,6 @@ input {
 
 .grid {
   display: grid;
-  gap: 1.5rem;
 }
 
 /*==== Page loader ===*/
@@ -620,7 +620,7 @@ input {
 
 /*=============== QUESTIONS ===============*/
 .questions {
-  background-color: var(--first-color-lighten);
+  background-color: var(--first-color-light);
 }
 
 .questions__container {
@@ -682,7 +682,7 @@ input {
 /*Rotate icon, change color of titles and background*/
 .accordion-open .questions__header,
 .accordion-open .questions__content {
-  background-color: var(--first-color);
+  background-color: var(--button-color);
 }
 
 .accordion-open .questions__item-title,
@@ -1930,20 +1930,6 @@ form .page .btns button.next {
 
   .questions__container {
     align-items: flex-start;
-    padding: 1rem 0 4rem;
-  }
-
-  .questions__title {
-    text-align: initial;
-  }
-  .questions__group {
-    row-gap: 2rem;
-  }
-  .questions__header {
-    padding: 1rem;
-  }
-  .questions__description {
-    padding: 0 3.5rem 2.25rem 2.75rem;
   }
 
   .discover__container {
@@ -2102,7 +2088,9 @@ form .page .btns button.next {
   }
 
   .questions__container {
-    padding: 1rem 0 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
   }
 
   .questions__title {
@@ -2309,6 +2297,10 @@ form .page .btns button.next {
     display: flex;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .scrollup {
+    right: 3rem;
   }
 }
 
