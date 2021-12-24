@@ -286,7 +286,7 @@ nextBtnFirst.addEventListener("click", function (event) {
       position: "center",
       icon: "error",
       title: "Please check the missing name fields!",
-      footer: "<p>Participant's name fields are compulsory.</p>",
+      footer: "<p>Participant's name fields are compulsory!.</p>",
       showConfirmButton: false,
       showCancelButton: true,
       background: "#edfffc",
