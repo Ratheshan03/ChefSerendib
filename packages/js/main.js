@@ -246,11 +246,12 @@ themeButton.addEventListener("click", () => {
 const Name = document.querySelector("#name-input");
 const Email = document.querySelector("#email-input");
 const Address = document.querySelector("#address-input");
-const TeamLeader = document.querySelector("#leader-input");
-const TeamName = document.querySelector("#team-input");
-const TeamLeaderEmail = document.querySelector("#leaderEmail-input");
-const TeamContact = document.querySelector("#teamContact-input");
-const RotaractClub = document.querySelector("#Club-input");
+const Number = document.querySelector("#Contact-input");
+const Age = document.querySelector("#age-input");
+const Photo = document.querySelector("#photo-input");
+const yes = document.querySelector("#vaccination-yes");
+const no = document.querySelector("#vaccination-no");
+
 const Queries = document.querySelector("#query-input");
 const Merch = document.querySelector("#merchandise-input");
 
@@ -278,6 +279,18 @@ nextBtnFirst.addEventListener("click", function (event) {
       icon: "error",
       title: "Please check the missing name field!",
       footer: "<p>Participant's name field is compulsory!</p>",
+      showConfirmButton: false,
+      showCancelButton: true,
+      background: "#edfffc",
+      timer: 5000,
+    });
+  } else if (Address.value == "" || Address.value == null) {
+    event.preventDefault();
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Please check the missing Address field!",
+      footer: "<p>Participant's address field is compulsory!</p>",
       showConfirmButton: false,
       showCancelButton: true,
       background: "#edfffc",
@@ -325,66 +338,37 @@ nextBtnFirst.addEventListener("click", function (event) {
 
 // ! Second Next button
 nextBtnSec.addEventListener("click", function (event) {
-  if (TeamLeader.value == "" || TeamLeader.value == null) {
+  if (Age.value == "" || Age.value == null) {
     event.preventDefault();
     Swal.fire({
       position: "center",
       icon: "error",
-      title: "Team Leader name is missing!",
-      footer: "<p>Team Leader name field is compulsory.</p>",
+      title: "Participant's Age is missing!",
+      footer: "<p>Participant's Age field is compulsory</p>",
       showConfirmButton: false,
       showCancelButton: true,
       background: "#edfffc",
       timer: 5000,
     });
-  } else if (TeamName.value == "" || TeamName.value == null) {
+  } else if (Number.value == "" || Number.value == null) {
     event.preventDefault();
     Swal.fire({
       position: "center",
       icon: "error",
-      title: "Team name cannot be empty!",
-      footer: "<p>Please enter your Team name.</p>",
+      title: "Contact Number cannot be empty!",
+      footer: "<p>Please enter your contact number</p>",
       showConfirmButton: false,
       showCancelButton: true,
       background: "#edfffc",
       timer: 5000,
     });
-  } else if (TeamLeaderEmail.value == "" || TeamLeaderEmail.value == null) {
+  } else if (Photo.value == "" || Photo.value == null) {
     event.preventDefault();
     Swal.fire({
       position: "center",
       icon: "error",
-      title: "Team leader email cannot be empty!",
-      footer: "<p>Please enter the correct email address.</p>",
-      showConfirmButton: false,
-      showCancelButton: true,
-      background: "#edfffc",
-      timer: 5000,
-    });
-  } else if (
-    !TeamLeaderEmail.value.match(
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    )
-  ) {
-    event.preventDefault();
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "You have entered the email field incorrectly!",
-      footer: "<p>Please check the field and enter a valid email address.</p>",
-      background: "#edfffc",
-      showCancelButton: true,
-      showConfirmButton: false,
-      color: "fff",
-      timer: 5000,
-    });
-  } else if (TeamContact.value == "" || TeamContact.value == null) {
-    event.preventDefault();
-    Swal.fire({
-      position: "center",
-      icon: "error",
-      title: "Team contact number field is empty!",
-      footer: "<p>Please enter a valid contact number.</p>",
+      title: "Participant's Portrait cannot be empty!",
+      footer: "<p>Please enter your profile image</p>",
       showConfirmButton: false,
       showCancelButton: true,
       background: "#edfffc",
@@ -402,12 +386,31 @@ nextBtnSec.addEventListener("click", function (event) {
 
 // ! Third Next Button
 nextBtnThird.addEventListener("click", function (event) {
-  event.preventDefault();
-  slidePage.style.marginLeft = "-78%";
-  bullet[current - 1].classList.add("active");
-  progressCheck[current - 1].classList.add("active");
-  progressText[current - 1].classList.add("active");
-  current += 1;
+  if (
+    yes.value == "" ||
+    yes.value == null ||
+    no.value == "" ||
+    no.value == null
+  ) {
+    event.preventDefault();
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Participant's Portrait cannot be empty!",
+      footer: "<p>Please enter your profile image</p>",
+      showConfirmButton: false,
+      showCancelButton: true,
+      background: "#edfffc",
+      timer: 5000,
+    });
+  } else {
+    event.preventDefault();
+    slidePage.style.marginLeft = "-78%";
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
+  }
 });
 
 // ! Submit Button
