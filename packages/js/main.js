@@ -252,6 +252,12 @@ const Photo = document.querySelector("#photo-input");
 const yes = document.querySelector("#vaccination-yes");
 const no = document.querySelector("#vaccination-no");
 const vPhoto = document.querySelector("#vphoto-input");
+const chefyes = document.querySelector("#chef-yes");
+const chefno = document.querySelector("#chef-no");
+const school = document.querySelector("#chef-school");
+const cyes = document.querySelector("#chefs-yes");
+const cno = document.querySelector("#chefs-no");
+const res = document.querySelector("#chef-res");
 
 // |------------------------------ Sliding Form (Slider) -------------------------------|
 
@@ -395,7 +401,7 @@ nextBtnThird.addEventListener("click", function (event) {
       position: "center",
       icon: "error",
       title: "Select the vaccination option to continue",
-      footer: "<p>Please enter your vaccination option</p>",
+      footer: "<p>Please select Yes or No on your preference</p>",
       showConfirmButton: false,
       showCancelButton: true,
       background: "#edfffc",
@@ -423,15 +429,20 @@ nextBtnThird.addEventListener("click", function (event) {
   }
 });
 
-// ! Submit Button
+// !Submit Button
 submitBtn.addEventListener("click", function (event) {
-  if (Merch.value == "" || Merch.value == null) {
+  if (
+    chefyes.value == "" ||
+    chefyes.value == null ||
+    chefyes.value == "" ||
+    chefyes.value == null
+  ) {
     event.preventDefault();
     Swal.fire({
       position: "center",
       icon: "error",
-      title: "Merchandise field is empty!",
-      footer: "<p>Please enter Yes or No on your preference.</p>",
+      title: "Select the compulsory values!",
+      footer: "<p>Please select Yes or No on your preference</p>",
       showConfirmButton: false,
       showCancelButton: true,
       background: "#edfffc",
