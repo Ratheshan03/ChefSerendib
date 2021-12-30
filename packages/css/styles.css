@@ -1135,10 +1135,11 @@ form .page .btns button.next {
   font-size: 14px;
   line-height: 20px;
   color: #000;
+  margin-bottom: -7px;
 }
 .progress-bar .step .bullet.active {
-  border-color: rgba(2, 167, 112, 0.8);
-  background: rgba(2, 167, 112, 0.8);
+  border-color: var(--button-color);
+  background: var(--button-color);
 }
 .progress-bar .step .bullet span {
   position: absolute;
@@ -1160,7 +1161,7 @@ form .page .btns button.next {
   background: #262626;
 }
 .progress-bar .step .bullet.active:after {
-  background: rgba(2, 167, 112, 0.8);
+  background: var(--button-color);
   transform: scaleX(0);
   transform-origin: left;
   animation: animate 0.3s linear forwards;
@@ -1175,7 +1176,7 @@ form .page .btns button.next {
   display: none;
 }
 .progress-bar .step p.active {
-  color: rgba(2, 145, 97, 0.8);
+  color: var(--button-color);
   transition: 0.2s linear;
   font-weight: 600;
 }
@@ -1373,6 +1374,10 @@ form .page .btns button.next {
 
 .contact__btn:hover .button__icon {
   transform: translateX(6px);
+}
+
+.upload_btn {
+  background-color: var(--button-color);
 }
 
 /*=============== SPONSORS ===============*/
