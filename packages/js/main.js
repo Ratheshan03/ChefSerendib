@@ -243,13 +243,9 @@ themeButton.addEventListener("click", () => {
 });
 
 // FORM VARIABLEs
-const University = document.querySelector("#university-input");
-const Name1 = document.querySelector("#name1-input");
-const Name2 = document.querySelector("#name2-input");
-const Name3 = document.querySelector("#name3-input");
-const Email1 = document.querySelector("#email1-input");
-const Email2 = document.querySelector("#email2-input");
-const Email3 = document.querySelector("#email3-input");
+const Name1 = document.querySelector("#name-input");
+const Email1 = document.querySelector("#email-input");
+const Email1 = document.querySelector("#address-input");
 const TeamLeader = document.querySelector("#leader-input");
 const TeamName = document.querySelector("#team-input");
 const TeamLeaderEmail = document.querySelector("#leaderEmail-input");
