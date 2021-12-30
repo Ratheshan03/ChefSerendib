@@ -258,6 +258,7 @@ const school = document.querySelector("#chef-school");
 const cyes = document.querySelector("#chefs-yes");
 const cno = document.querySelector("#chefs-no");
 const res = document.querySelector("#chef-res");
+const cstate = document.querySelector("#chef-state");
 
 // |------------------------------ Sliding Form (Slider) -------------------------------|
 
