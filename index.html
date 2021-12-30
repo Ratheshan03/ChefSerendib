@@ -516,21 +516,20 @@
                                       </div>
                                       <div class="page">
                                        <div class="field ">
-                                          <div class="label R-club">Covid-19 vaccination</div>
+                                          <div class="label">Covid-19 vaccination</div>
                                        </div>
                                        <div>
                                            <div class="field">
-                                            <div class="label">Are you fully vaccinated?</div>  
-                                            <input type="radio" id="vaccination-yes" name="yes-value" value="Yes">
-                                            <label for="vaccination-yes">Yes</label>
-                                            <input type="radio" id="vaccination-no" name="no-value" value="No">
-                                            <label for="vaccination-no">No</label>
+                                                <div class="label">Are you fully vaccinated?</div>  
+                                                <input type="radio" id="vaccination-yes" name="yes-value" value="Yes">
+                                                <label for="vaccination-yes">Yes</label>
+                                                <input type="radio" id="vaccination-no" name="no-value" value="No">
+                                                <label for="vaccination-no">No</label>
                                             </div>
-                                            
-                                            <div class="field ">
-                                                <input name="Name-2" id="name2-input" type="text" placeholder="Enter your name"  />
-                                                <input  name="Club-2" id="club-input" type="text" placeholder="Enter the club name" />
-                                            </div>   
+                                            <div class="field">
+                                                <div class="label">If Yes, Attach a Image of both sides of your vaccination Card</div>
+                                                <input name="vphoto" id="vphoto-input" type="button" />
+                                            </div>
                                         </div>
 
                                         <div class="field btns Add-btn">
@@ -541,22 +540,32 @@
 
                                       <div class="page">
                                         <div class="field">
-                                            <div class="label">Rules and Regualtions</div>
-                                            <a href="./packages/pdf/Rules & Regulations.pdf" attributes-list download="" class="download-btn" id="download-btn" type="button"><i class="fa fa-download"></i>Download</a>
+                                            <div class="label">Are you following or have you completed any Culinary Course?</div>  
+                                            <input type="radio" id="chef-yes" name="yes-values" value="Yes">
+                                            <label for="chef-yes">Yes</label>
+                                            <input type="radio" id="chef-no" name="no-values" value="No">
+                                            <label for="chef-no">No</label>
+                                        </div>
+                                        <div class="field">
+                                            <div class="label">If Yes, State the culinary School</div>
+                                            <input name="chefSchool" id="chef-school" type="text" />
                                         </div>
 
                                         <div class="field">
-                                            <div class="label">For Queries</div>
-                                            <textarea name="Queries" rows="30" cols="70" id="query-input" type="text"></textarea>
-                                          </div>
-
-                                        <div class="field">
-                                          <div class="label merch">
-                                            If your team interested in our official merchandise, type in YES/NO below.
-                                          </div>
-                                          <input name="Merchandise" id="merchandise-input" type="text" class="merchandise-input" />
+                                            <div class="label">Are you working in a Hotel/Restaurant industry now?</div>  
+                                            <input type="radio" id="chefs-yes" name="yesvalues" value="Yes">
+                                            <label for="chefs-yes">Yes</label>
+                                            <input type="radio" id="chefs-no" name="novalues" value="No">
+                                            <label for="chefs-no">No</label>
                                         </div>
-                                        
+                                        <div class="field">
+                                            <div class="label">If Yes, State the name of the Hotel/Restaurant</div>
+                                            <input name="chefres" id="chef-res" type="text"/>
+                                        </div>
+                                        <div class="field">
+                                            <div class="label">If you are a Chef, State the position</div>
+                                            <input name="chef-state" id="chef-state" type="text"/>
+                                        </div>
                                         <div class="field btns last-btns">
                                           <button class="prev-3 prev">Previous</button>
                                           <button type="submit" class="submit" id="submit-btn" >Submit</button>

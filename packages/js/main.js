@@ -251,9 +251,7 @@ const Age = document.querySelector("#age-input");
 const Photo = document.querySelector("#photo-input");
 const yes = document.querySelector("#vaccination-yes");
 const no = document.querySelector("#vaccination-no");
-
-const Queries = document.querySelector("#query-input");
-const Merch = document.querySelector("#merchandise-input");
+const vPhoto = document.querySelector("#vphoto-input");
 
 // |------------------------------ Sliding Form (Slider) -------------------------------|
 
@@ -396,8 +394,20 @@ nextBtnThird.addEventListener("click", function (event) {
     Swal.fire({
       position: "center",
       icon: "error",
-      title: "Participant's Portrait cannot be empty!",
-      footer: "<p>Please enter your profile image</p>",
+      title: "Select the vaccination option to continue",
+      footer: "<p>Please enter your vaccination option</p>",
+      showConfirmButton: false,
+      showCancelButton: true,
+      background: "#edfffc",
+      timer: 5000,
+    });
+  } else if (vPhoto.value == "" || vPhoto.value == null) {
+    event.preventDefault();
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Vaccination card image cannot be empty!",
+      footer: "<p>Please enter your vaccination card image</p>",
       showConfirmButton: false,
       showCancelButton: true,
       background: "#edfffc",
