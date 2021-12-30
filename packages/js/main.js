@@ -434,8 +434,8 @@ submitBtn.addEventListener("click", function (event) {
   if (
     chefyes.value == "" ||
     chefyes.value == null ||
-    chefyes.value == "" ||
-    chefyes.value == null
+    chefno.value == "" ||
+    chefno.value == null
   ) {
     event.preventDefault();
     Swal.fire({
@@ -448,11 +448,29 @@ submitBtn.addEventListener("click", function (event) {
       background: "#edfffc",
       timer: 5000,
     });
+  } else if (
+    cyes.value == "" ||
+    cyes.value == null ||
+    cno.value == "" ||
+    cno.value == null
+  ) {
+    event.preventDefault();
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Select the compulsory values!",
+      footer: "<p>Please select Yes or No on your preference</p>",
+      showConfirmButton: false,
+      showCancelButton: true,
+      background: "#edfffc",
+      timer: 5000,
+    });
+  } else {
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
   }
-  bullet[current - 1].classList.add("active");
-  progressCheck[current - 1].classList.add("active");
-  progressText[current - 1].classList.add("active");
-  current += 1;
 });
 
 prevBtnSec.addEventListener("click", function (event) {
