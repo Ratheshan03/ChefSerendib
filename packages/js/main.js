@@ -243,9 +243,9 @@ themeButton.addEventListener("click", () => {
 });
 
 // FORM VARIABLEs
-const Name1 = document.querySelector("#name-input");
-const Email1 = document.querySelector("#email-input");
-const Email1 = document.querySelector("#address-input");
+const Name = document.querySelector("#name-input");
+const Email = document.querySelector("#email-input");
+const Address = document.querySelector("#address-input");
 const TeamLeader = document.querySelector("#leader-input");
 const TeamName = document.querySelector("#team-input");
 const TeamLeaderEmail = document.querySelector("#leaderEmail-input");
@@ -271,45 +271,32 @@ let current = 1;
 
 // ! First Next Button
 nextBtnFirst.addEventListener("click", function (event) {
-  if (
-    Name1.value == "" ||
-    Name1.value == null ||
-    Name2.value == "" ||
-    Name2.value == null
-  ) {
+  if (Name.value == "" || Name.value == null) {
     event.preventDefault();
     Swal.fire({
       position: "center",
       icon: "error",
-      title: "Please check the missing name fields!",
-      footer: "<p>Participant's name fields are compulsory!.</p>",
+      title: "Please check the missing name field!",
+      footer: "<p>Participant's name field is compulsory!</p>",
       showConfirmButton: false,
       showCancelButton: true,
       background: "#edfffc",
       timer: 5000,
     });
-  } else if (
-    Email1.value == "" ||
-    Email1.value == null ||
-    Email2.value == "" ||
-    Email2.value == null
-  ) {
+  } else if (Email.value == "" || Email.value == null) {
     event.preventDefault();
     Swal.fire({
       position: "center",
       icon: "error",
       title: "Email fields cannot be empty!",
-      footer: "<p>Please enter the correct email address.</p>",
+      footer: "<p>Please enter the correct email address</p>",
       showConfirmButton: false,
       showCancelButton: true,
       background: "#edfffc",
       timer: 5000,
     });
   } else if (
-    !Email1.value.match(
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    ) ||
-    !Email2.value.match(
+    !Email.value.match(
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     )
   ) {
