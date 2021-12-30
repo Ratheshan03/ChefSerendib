@@ -246,7 +246,7 @@ themeButton.addEventListener("click", () => {
 const Name = document.querySelector("#name-input");
 const Email = document.querySelector("#email-input");
 const Address = document.querySelector("#address-input");
-const Number = document.querySelector("#contact-input");
+const Num = document.querySelector("#contact-Number");
 const Age = document.querySelector("#age-input");
 const Photo = document.querySelector("#photo-input");
 const yes = document.querySelector("#vaccination-yes");
@@ -355,7 +355,7 @@ nextBtnSec.addEventListener("click", function (event) {
       background: "#edfffc",
       timer: 5000,
     });
-  } else if (Number.value == "" || Number.value == null) {
+  } else if (Num.value == "" || Num.value == null) {
     event.preventDefault();
     Swal.fire({
       position: "center",
