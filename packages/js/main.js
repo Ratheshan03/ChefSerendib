@@ -420,19 +420,7 @@ nextBtnThird.addEventListener("click", function (event) {
       background: "#edfffc",
       timer: 5000,
     });
-  } else {
-    event.preventDefault();
-    slidePage.style.marginLeft = "-78%";
-    bullet[current - 1].classList.add("active");
-    progressCheck[current - 1].classList.add("active");
-    progressText[current - 1].classList.add("active");
-    current += 1;
-  }
-});
-
-// !Submit Button
-submitBtn.addEventListener("click", function (event) {
-  if (
+  } else if (
     chefyes.value == "" ||
     chefyes.value == null ||
     chefno.value == "" ||
@@ -449,7 +437,19 @@ submitBtn.addEventListener("click", function (event) {
       background: "#edfffc",
       timer: 5000,
     });
-  } else if (
+  } else {
+    event.preventDefault();
+    slidePage.style.marginLeft = "-78%";
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
+  }
+});
+
+// !Submit Button
+submitBtn.addEventListener("click", function (event) {
+  if (
     cyes.value == "" ||
     cyes.value == null ||
     cno.value == "" ||
