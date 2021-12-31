@@ -940,8 +940,8 @@ button {
 }
 
 .radio {
+  margin-left: 20px;
   margin-top: 10px;
-  margin-left: 30px;
 }
 
 .radio-label {
@@ -980,7 +980,7 @@ form .page .field .welcome-msg {
   margin-top: -10px;
   margin-bottom: -10px;
   padding: 6px;
-  background: rgba(2, 167, 112, 0.2);
+  background: rgba(255, 104, 99, 0.658);
   border-radius: 4px;
 }
 
