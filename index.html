@@ -641,17 +641,21 @@
                       <input
                         type="radio"
                         id="vaccination-yes"
-                        name="yes-value"
+                        name="vacvalue"
                         value="Yes"
+                        class="radio"
                       />
-                      <label for="vaccination-yes">Yes</label>
+                      <label for="vaccination-yes" class="radio-label"
+                        >Yes</label
+                      >
                       <input
                         type="radio"
                         id="vaccination-no"
-                        name="no-value"
+                        name="vacvalue"
                         value="No"
+                        class="radio"
                       />
-                      <label for="vaccination-no">No</label>
+                      <label for="vaccination-no" class="radio-label">No</label>
                     </div>
                     <div class="field">
                       <div class="label">
@@ -665,6 +669,31 @@
                         class="upload-btn"
                       />
                     </div>
+                    <div class="field">
+                      <div class="label">
+                        Have you followed or completed any Culinary Course?
+                      </div>
+                      <input
+                        type="radio"
+                        id="chef-yes"
+                        name="cosvalues"
+                        value="Yes"
+                        class="radio"
+                      />
+                      <label for="chef-yes" class="radio-label">Yes</label>
+                      <input
+                        type="radio"
+                        id="chef-no"
+                        name="cosvalues"
+                        value="No"
+                        class="radio"
+                      />
+                      <label for="chef-no" class="radio-label">No</label>
+                    </div>
+                    <div class="field">
+                      <div class="label">If Yes, State the culinary School</div>
+                      <input name="chefSchool" id="chef-school" type="text" />
+                    </div>
 
                     <div class="field btns Add-btn">
                       <button class="prev-2 prev">Previous</button>
@@ -674,48 +703,25 @@
 
                   <div class="page">
                     <div class="field">
-                      <div class="label">
-                        Are you following or have you completed any Culinary
-                        Course?
-                      </div>
-                      <input
-                        type="radio"
-                        id="chef-yes"
-                        name="yes-values"
-                        value="Yes"
-                      />
-                      <label for="chef-yes">Yes</label>
-                      <input
-                        type="radio"
-                        id="chef-no"
-                        name="no-values"
-                        value="No"
-                      />
-                      <label for="chef-no">No</label>
-                    </div>
-                    <div class="field">
-                      <div class="label">If Yes, State the culinary School</div>
-                      <input name="chefSchool" id="chef-school" type="text" />
-                    </div>
-
-                    <div class="field">
-                      <div class="label">
+                      <div class="label res-label">
                         Are you working in a Hotel/Restaurant industry now?
                       </div>
                       <input
                         type="radio"
                         id="chefs-yes"
-                        name="yesvalues"
+                        name="resvalues"
                         value="Yes"
+                        class="radio"
                       />
-                      <label for="chefs-yes">Yes</label>
+                      <label for="chefs-yes" class="radio-label">Yes</label>
                       <input
                         type="radio"
                         id="chefs-no"
-                        name="novalues"
+                        name="resvalues"
                         value="No"
+                        class="radio"
                       />
-                      <label for="chefs-no">No</label>
+                      <label for="chefs-no" class="radio-label">No</label>
                     </div>
                     <div class="field">
                       <div class="label">
@@ -727,7 +733,12 @@
                       <div class="label">
                         If you are a Chef, State the position
                       </div>
-                      <input name="chef-state" id="chef-state" type="text" />
+                      <input
+                        name="chef-state"
+                        id="chef-state"
+                        type="text"
+                        placeholder="Type your position"
+                      />
                     </div>
                     <div class="field btns last-btns">
                       <button class="prev-3 prev">Previous</button>
@@ -755,7 +766,7 @@
               confirm your order.
             </p>
 
-            <div action="" class="merch__form">
+            <div class="merch__form">
               <img
                 src="./packages/img/Finaltshirt.jpeg"
                 alt="merchandise-poster"
