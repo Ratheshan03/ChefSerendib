@@ -411,6 +411,11 @@ input {
   border-radius: 5px;
 }
 
+button {
+  background-color: var(--button-color);
+  color: var(--white-color);
+}
+
 .button:hover {
   background-color: var(--button-color-alt);
 }
@@ -930,8 +935,20 @@ input {
   width: 500%;
 }
 .form-outer form .page {
-  width: 25%;
+  width: 26%;
   transition: margin-left 0.35s ease-in-out;
+}
+
+.radio {
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.radio-label {
+  font-size: smaller;
+  font-weight: 600;
+  margin-right: 100px;
+  margin-top: 20px;
 }
 
 .form-outer form .page .field {
@@ -981,16 +998,6 @@ form .page .field input {
   outline: none;
 }
 
-.rotaract-label {
-  margin-top: 10px;
-}
-
-.rotaract-input {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  color: var(--text-color-light);
-}
-
 form .page .field select {
   width: 100%;
   padding-left: 10px;
@@ -1009,7 +1016,7 @@ form .page .field button {
   width: 100%;
   height: calc(100% + 5px);
   border: none;
-  background: var(--first-color);
+  background: var(--button-color);
   margin-top: 10px;
   border-radius: 5px;
   color: rgb(255, 255, 255);
@@ -1052,45 +1059,14 @@ select:focus {
   font-family: sans-serif;
 }
 
-#download-btn {
-  width: 100%;
-  height: 35px;
-  margin-bottom: 40px;
-  border: none;
-  padding: 10px 27px;
-  cursor: pointer;
-  font-size: 15px;
-  display: flex;
-  background: var(--first-color);
-  border-radius: 5px;
-  color: #fff;
+.upload-btn {
   align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  transition: 0.5s ease;
-}
-
-#download-btn:hover {
-  background: var(--first-color-second);
-}
-
-.fa-download {
-  padding: 8px;
-}
-
-#query-input {
-  border: none;
-  outline: none;
-  font-size: 16px;
   padding: 5px;
-  height: 100px;
-  border-radius: 5px;
-  background: var(--input-color);
-  color: var(--text-color-light);
+  justify-content: center;
 }
 
 form .page .field button:hover {
-  background: var(--first-color-alt);
+  background: var(--button-color-alt);
 }
 
 form .page .btns button {
@@ -1193,6 +1169,11 @@ form .page .btns button.next {
   color: #fff;
 }
 
+.field .radio {
+  background-color: var(--first-color-light);
+  font-size: smaller;
+}
+
 .field .merch {
   margin-top: 65px;
 }
@@ -1242,7 +1223,7 @@ form .page .btns button.next {
 /* Merch */
 
 .merch__bg {
-  background-color: var(--input-color);
+  background-color: var(--first-color-light);
   padding: 2.5rem 0;
 }
 
@@ -1257,7 +1238,7 @@ form .page .btns button.next {
 }
 
 .merch__form {
-  background-color: var(--input-color);
+  background-color: var(--button-color);
   padding: 2rem;
   margin-left: auto;
   margin-right: auto;
@@ -1374,10 +1355,6 @@ form .page .btns button.next {
 
 .contact__btn:hover .button__icon {
   transform: translateX(6px);
-}
-
-.upload_btn {
-  background-color: var(--button-color);
 }
 
 /*=============== SPONSORS ===============*/
