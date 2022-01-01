@@ -627,6 +627,14 @@ button {
   transform: translateY(-0.25rem);
 }
 
+.Round {
+  background-color: var(--first-color-light);
+  margin: 60px;
+  width: auto;
+  padding: 40px;
+  border-radius: 4px;
+}
+
 /*=============== QUESTIONS ===============*/
 .questions {
   background-color: var(--first-color-light);
@@ -829,6 +837,10 @@ button {
 }
 
 /*=============== VIDEO ===============*/
+.video {
+  background-color: var(--first-color-light);
+}
+
 .video__container {
   padding-bottom: 1rem;
 }
@@ -1225,6 +1237,9 @@ form .page .btns button.next {
 }
 
 /* Merch */
+.merch {
+  background-color: var(--first-color-light);
+}
 
 .merch__bg {
   background-color: var(--first-color-light);
@@ -1569,7 +1584,7 @@ form .page .btns button.next {
   .merch__form {
     height: 34vh;
     width: 80vw;
-    background-color: var(--input-color);
+    background-color: var(--button-color);
     justify-items: center;
     justify-content: center;
     text-align: center;
@@ -1767,7 +1782,7 @@ form .page .btns button.next {
   .merch__form {
     height: 39vh;
     width: 80vw;
-    background-color: var(--input-color);
+    background-color: var(--button-color);
     justify-items: center;
     justify-content: center;
     text-align: center;
@@ -1848,7 +1863,7 @@ form .page .btns button.next {
   .merch__form {
     height: 42vh;
     width: 80vw;
-    background-color: var(--input-color);
+    background-color: var(--button-color);
     justify-items: center;
     justify-content: center;
     text-align: center;
@@ -2088,7 +2103,7 @@ form .page .btns button.next {
   .merch__form {
     height: 45vh;
     width: 80vw;
-    background-color: var(--input-color);
+    background-color: var(--button-color);
     justify-items: center;
     justify-content: center;
     text-align: center;
@@ -2315,7 +2330,7 @@ form .page .btns button.next {
   .merch__form {
     height: 50vh;
     width: 80vw;
-    background-color: var(--input-color);
+    background-color: var(--button-color);
     justify-items: center;
     justify-content: center;
     text-align: center;
@@ -2384,7 +2399,7 @@ form .page .btns button.next {
   .merch__form {
     height: 52vh;
     width: 80vw;
-    background-color: var(--input-color);
+    background-color: var(--button-color);
     justify-items: center;
     justify-content: center;
     text-align: center;
@@ -2457,7 +2472,7 @@ form .page .btns button.next {
   .merch__form {
     height: 60vh;
     max-width: 80vw;
-    background-color: var(--input-color);
+    background-color: var(--button-color);
     justify-items: center;
     justify-content: center;
     text-align: center;
