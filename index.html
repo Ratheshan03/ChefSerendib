@@ -587,10 +587,11 @@
               </div>
               <div class="form-outer">
                 <form
-                  action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSewHjpcRCJKEuz-Ba2sk3OwzenxF5vmSo_asW8ze1TH69kApA/formResponse"
+                  action=""
+                  autocomplete="off"
                   id="submit-form"
+                  name="google-sheet"
                   class="register__form grid"
-                  method="post"
                 >
                   <div class="page slide-page">
                     <div class="field">
@@ -602,7 +603,7 @@
                     <div class="field">
                       <div class="label">Full Name</div>
                       <input
-                        name="entry.2092238618"
+                        name="FullName"
                         id="name-input"
                         type="text"
                         placeholder="Enter your full name"
@@ -612,7 +613,7 @@
                     <div class="field">
                       <div class="label">E-mail</div>
                       <input
-                        name="entry.588393791"
+                        name="PersonalEmail"
                         id="email-input"
                         type="email"
                         placeholder="Enter your email"
@@ -622,7 +623,7 @@
                     <div class="field">
                       <div class="label">Address</div>
                       <input
-                        name="entry.479301265"
+                        name="Address"
                         id="address-input"
                         type="text"
                         placeholder="Enter your permenent address"
@@ -638,7 +639,7 @@
                     <div class="field">
                       <div class="label">Contact Number (WhatsApp)</div>
                       <input
-                        name="entry.1753222212"
+                        name="Number"
                         id="contact-Number"
                         type="Number"
                         placeholder="Enter Your contact number"
@@ -648,7 +649,7 @@
                     <div class="field">
                       <div class="label">Age</div>
                       <input
-                        name="entry.2109138769"
+                        name="Age"
                         id="age-input"
                         type="Number"
                         placeholder="Enter your age"
@@ -660,12 +661,11 @@
                         Upload a Formal Picture Of yourself
                       </div>
                       <input
-                        name="entry.1162777310"
+                        name="Potrait"
                         id="photo-input"
                         type="file"
                         accept="image/*"
                         class="upload-btn"
-                        value=""
                         role="list"
                       />
                     </div>
@@ -682,7 +682,7 @@
                       <input
                         type="radio"
                         id="vaccination-yes"
-                        name="entry.179680385"
+                        name="Vaccinated"
                         value="Yes"
                         class="radio"
                       />
@@ -692,7 +692,7 @@
                       <input
                         type="radio"
                         id="vaccination-no"
-                        name="entry.179680385"
+                        name="Vaccinated"
                         value="No"
                         class="radio"
                       />
@@ -703,7 +703,7 @@
                         Attach the Image of your vaccination card
                       </div>
                       <input
-                        name="entry.1436511497"
+                        name="Vcard"
                         id="vphoto-input"
                         type="file"
                         accept="image/*"
@@ -719,7 +719,7 @@
                       <input
                         type="radio"
                         id="chef-yes"
-                        name="entry.1193749377"
+                        name="CulinaryCourse"
                         value="Yes"
                         class="radio"
                       />
@@ -727,7 +727,7 @@
                       <input
                         type="radio"
                         id="chef-no"
-                        name="entry.1193749377"
+                        name="CulinaryCourse"
                         value="No"
                         class="radio"
                       />
@@ -735,11 +735,7 @@
                     </div>
                     <div class="field">
                       <div class="label">If Yes, State the culinary School</div>
-                      <input
-                        name="entry.1285637879"
-                        id="chef-school"
-                        type="text"
-                      />
+                      <input name="CCName" id="chef-school" type="text" />
                     </div>
 
                     <div class="field btns Add-btn">
@@ -756,7 +752,7 @@
                       <input
                         type="radio"
                         id="chefs-yes"
-                        name="entry.1918485304"
+                        name="Working"
                         value="Yes"
                         class="radio"
                       />
@@ -764,7 +760,7 @@
                       <input
                         type="radio"
                         id="chefs-no"
-                        name="entry.1918485304"
+                        name="Working"
                         value="No"
                         class="radio"
                       />
@@ -774,18 +770,14 @@
                       <div class="label">
                         If Yes, State the name of the Hotel/Restaurant
                       </div>
-                      <input
-                        name="entry.1442335701"
-                        id="chef-res"
-                        type="text"
-                      />
+                      <input name="WorkPlace" id="chef-res" type="text" />
                     </div>
                     <div class="field">
                       <div class="label">
                         If you are a Chef, State the position
                       </div>
                       <input
-                        name="entry.1383334189"
+                        name="Position"
                         id="chef-state"
                         type="text"
                         placeholder="Type your position"
@@ -793,12 +785,7 @@
                     </div>
                     <div class="field btns last-btns">
                       <button class="prev-3 prev">Previous</button>
-                      <button
-                        type="submit"
-                        name="dlut"
-                        class="submit"
-                        id="submit-btn"
-                      >
+                      <button type="submit" class="submit" id="submit-btn">
                         Submit
                       </button>
                     </div>
@@ -1077,44 +1064,43 @@
     </script>
 
     <!--=============== Confirmation email ===============-->
-    <!-- <script> 
-            $("#submit-form").submit((e)=>{
-                e.preventDefault();
-                $.ajax({
-                    url:"https://script.google.com/macros/s/AKfycbxSnvafc3kmYR-QzNlux2h40NaMl3tsJ5Qwd3usk3kEvGKiY-wpGvxz18TUAdQCwNiv/exec",
-                    data:$("#submit-form").serialize(),
-                    method:"post",
-                    success:function (response){
-                        Swal.fire({
-                            position: "center",
-                            icon: "success",
-                            title: "Registration Successful",
-                            footer: "<p>Please be aware of our future emails.</p>",
-                            showConfirmButton: false,
-                            showCancelButton: false,
-                            background: "#edfffc",
-                            timer: 5000,
-                        })
-                        document.getElementById('submit-form').reset();
-                        setTimeout(function () {
-                            window.location.reload();
-                        }, 5000);
-                       
-                    },
-                    error:function (err){
-                        Swal.fire({
-                            icon: "error",
-                            title: "Oops...",
-                            text: "Something went wrong!",
-                            footer: "<p>Please check the missing fields</p>",
-                            background: "#edfffc",
-                            showCancelButton: false,
-                            color: "fff",
-                            timer: 6000,
-                        })
-                    }
-                })
-            })
-        </script> -->
+    <script>
+      $("#submit-form").submit((e) => {
+        e.preventDefault();
+        $.ajax({
+          url: "https://script.google.com/macros/s/AKfycbzMZ65bx15prZyQTGAw7Mp1zupycR4f9j5_Mx4RyAAw1U-M_sTDheofM2tZJYsn7XAx/exec",
+          data: $("#submit-form").serialize(),
+          method: "post",
+          success: function (response) {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Registration Successful",
+              footer: "<p>Please be aware of our future emails.</p>",
+              showConfirmButton: false,
+              showCancelButton: false,
+              background: "#edfffc",
+              timer: 5000,
+            });
+            document.getElementById("submit-form").reset();
+            setTimeout(function () {
+              window.location.reload();
+            }, 5000);
+          },
+          error: function (err) {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Something went wrong!",
+              footer: "<p>Please check the missing fields</p>",
+              background: "#edfffc",
+              showCancelButton: false,
+              color: "fff",
+              timer: 6000,
+            });
+          },
+        });
+      });
+    </script>
   </body>
 </html>
