@@ -53,40 +53,131 @@ let swiper = new Swiper(".discover__container", {
 });
 
 /*==================== Countdown ====================*/
-const countdown = () => {
-  const countDate = new Date("Jan 25, 2022 00:00:00").getTime();
-  const now = new Date().getTime();
-  const gap = countDate - now;
+window.addEventListener("load", () => {
+  const days = document.querySelector(".days");
+  const hours = document.querySelector(".hours");
+  const minutes = document.querySelector(".minutes");
+  const seconds = document.querySelector(".seconds");
 
-  // Time as normal units
-  const second = 1000;
-  const minute = second * 60;
-  const hour = minute * 60;
-  const day = hour * 24;
+  let timeLeft = {
+    d: 0,
+    h: 0,
+    m: 0,
+    s: 0,
+  };
 
-  // Converting our gap to normal units not ms
-  const textDay = Math.floor(gap / day);
-  const textHour = Math.floor((gap % day) / hour);
-  const textMinute = Math.floor((gap % hour) / minute);
-  const textSecond = Math.floor((gap % minute) / second);
+  let totalSeconds;
 
-  // Rendering countdown values into DOM
-  document.querySelector(".day").innerText = textDay;
-  document.querySelector(".hour").innerText = textHour;
-  document.querySelector(".min").innerText = textMinute;
-  document.querySelector(".sec").innerText = textSecond;
-};
+  function init() {
+    totalSeconds = Math.floor((new Date("01/21/2022") - new Date()) / 1000);
+    setTimeLeft();
+    let interval = setInterval(() => {
+      if (totalSeconds < 0) {
+        clearInterval(interval);
+      }
+      countTime();
+    }, 1000);
+  }
 
-// calling the function for every second (1000ms = 1s)
-setInterval(countdown, 1000);
+  function countTime() {
+    if (totalSeconds > 0) {
+      --timeLeft.s;
+      if (timeLeft.m >= 0 && timeLeft.s < 0) {
+        timeLeft.s = 59;
+        --timeLeft.m;
+        if (timeLeft.h >= 0 && timeLeft.m < 0) {
+          timeLeft.m = 59;
+          --timeLeft.h;
+          if (timeLeft.d >= 0 && timeLeft.h < 0) {
+            timeLeft.h = 23;
+            --timeLeft.d;
+          }
+        }
+      }
+    }
+    --totalSeconds;
+    printTime();
+  }
 
-// Prize cards
-VanillaTilt.init(document.querySelectorAll(".image__overlay"), {
-  max: 12,
-  speed: 400,
-  glare: true,
-  "max-glare": 0.2,
+  function printTime() {
+    animateFlip(days, timeLeft.d);
+    animateFlip(hours, timeLeft.h);
+    animateFlip(minutes, timeLeft.m);
+    animateFlip(seconds, timeLeft.s);
+  }
+
+  function animateFlip(element, value) {
+    const valueInDom = element.querySelector(".bottom-back").innerText;
+    const currentValue = value < 10 ? "0" + value : "" + value;
+
+    if (valueInDom === currentValue) return;
+
+    element.querySelector(".top-back span").innerText = currentValue;
+    element.querySelector(".bottom-back span").innerText = currentValue;
+
+    gsap.to(element.querySelector(".top"), 0.7, {
+      rotationX: "-180deg",
+      transformPerspective: 300,
+      ease: Quart.easeOut,
+      onComplete: function () {
+        element.querySelector(".top").innerText = currentValue;
+        element.querySelector(".bottom").innerText = currentValue;
+        gsap.set(element.querySelector(".top"), { rotationX: 0 });
+      },
+    });
+
+    gsap.to(element.querySelector(".top-back"), 0.7, {
+      rotationX: 0,
+      transformPerspective: 300,
+      ease: Quart.easeOut,
+      clearProps: "all",
+    });
+  }
+
+  function setTimeLeft() {
+    timeLeft.d = Math.floor(totalSeconds / (60 * 60 * 24));
+    timeLeft.h = Math.floor((totalSeconds / (60 * 60)) % 24);
+    timeLeft.m = Math.floor((totalSeconds / 60) % 60);
+    timeLeft.s = Math.floor(totalSeconds % 60);
+  }
+
+  init();
 });
+
+// const countdown = () => {
+//   const countDate = new Date("Jan 25, 2022 00:00:00").getTime();
+//   const now = new Date().getTime();
+//   const gap = countDate - now;
+
+//   // Time as normal units
+//   const second = 1000;
+//   const minute = second * 60;
+//   const hour = minute * 60;
+//   const day = hour * 24;
+
+//   // Converting our gap to normal units not ms
+//   const textDay = Math.floor(gap / day);
+//   const textHour = Math.floor((gap % day) / hour);
+//   const textMinute = Math.floor((gap % hour) / minute);
+//   const textSecond = Math.floor((gap % minute) / second);
+
+//   // Rendering countdown values into DOM
+//   document.querySelector(".day").innerText = textDay;
+//   document.querySelector(".hour").innerText = textHour;
+//   document.querySelector(".min").innerText = textMinute;
+//   document.querySelector(".sec").innerText = textSecond;
+// };
+
+// // calling the function for every second (1000ms = 1s)
+// setInterval(countdown, 1000);
+
+// // Prize cards
+// VanillaTilt.init(document.querySelectorAll(".image__overlay"), {
+//   max: 12,
+//   speed: 400,
+//   glare: true,
+//   "max-glare": 0.2,
+// });
 
 /*=============== QUESTIONS ACCORDION ===============*/
 const accordionItems = document.querySelectorAll(".questions__item");
