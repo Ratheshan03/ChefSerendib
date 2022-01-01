@@ -8,11 +8,11 @@
   /*========== Colors ==========*/
   /* Change favorite color to match images */
   /*Green dark 190 - Green 171 - Grren Blue 200*/
-  --hue: 152;
+  --hue: 162;
 
   /* HSL color mode */
   --first-color: hsl(var(--hue), 24%, 32%);
-  --first-color-second: hsl(var(--hue-color), 24%, 28%);
+  --first-color-second: hsl(var(--hue), 24%, 28%);
   --first-color-alt: hsl(var(--hue), 24%, 28%);
   --first-color-light: hsl(var(--hue), 24%, 66%);
   --first-color-lighten: hsl(var(--hue), 24%, 92%);
@@ -20,12 +20,12 @@
   --text-color: hsl(var(--hue), 4%, 35%);
   --text-color-light: hsl(var(--hue), 4%, 55%);
   --body-color: hsl(var(--hue), 0%, 100%);
-  --input-color: hsl(var(--hue-color), 24%, 97%);
+  --input-color: hsl(var(--hue), 24%, 97%);
   --white-color: rgb(224, 224, 224);
-  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
-  --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
-  --button-color: rgb(248, 128, 107);
-  --button-color-alt: rgb(247, 150, 133);
+  --scroll-bar-color: hsl(var(--hue), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue), 12%, 75%);
+  --button-color: rgb(236, 173, 0);
+  --button-color-alt: rgb(253, 186, 0);
   --container-color: #fff;
 
   /*========== Font and typography ==========*/
@@ -78,10 +78,11 @@
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
   --first-color-second: hsl(var(--hue), 8%, 20%);
+  --first-color-light: hsl(var(--hue), 20%, 5%);
   --title-color: hsl(var(--hue), 4%, 95%);
   --text-color: hsl(var(--hue), 4%, 75%);
   --input-color: hsl(var(--hue), 29%, 16%);
-  --body-color: hsl(var(--hue), 8%, 12%);
+  --body-color: hsl(var(--hue), 100%, 0.5%);
   --scroll-bar-color: hsl(var(--hue), 12%, 48%);
   --scroll-thumb-color: hsl(var(--hue), 12%, 36%);
   --container-color: hsl(var(--hue), 8%, 16%);
@@ -598,6 +599,8 @@ button {
   background-color: var(--container-color);
   padding: 2.5rem 3rem 2rem 1.5rem;
   border-radius: 1rem;
+  color: rgb(224, 224, 224);
+  cursor: pointer;
 }
 
 .steps__card-number {
@@ -905,7 +908,7 @@ button {
   height: 80vh;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(13, 163, 118, 0.3), rgba(95, 255, 180, 0.8));
+  background: linear-gradient(rgba(163, 128, 13, 0.3), rgba(233, 178, 0, 0.8));
 }
 
 /* multi section */
@@ -981,7 +984,7 @@ form .page .field .welcome-msg {
   margin-top: -10px;
   margin-bottom: -10px;
   padding: 6px;
-  background: rgba(255, 104, 99, 0.658);
+  background: rgba(255, 183, 27, 0.658);
   border-radius: 4px;
 }
 
@@ -1639,7 +1642,7 @@ form .page .btns button.next {
   .min,
   .sec {
     font-size: 2rem;
-    color: #457b9d;
+    color: var(--button-color);
     padding: 22px;
   }
 
