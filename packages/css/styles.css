@@ -520,6 +520,7 @@ button {
 
 .about__description {
   margin-bottom: var(--mb-2);
+  text-align: justify;
 }
 
 .about__img {
@@ -799,7 +800,7 @@ button {
 }
 
 .data__description {
-  text-align: justify;
+  text-align: justify !important;
 }
 
 .image__overlay {
