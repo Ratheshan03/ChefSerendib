@@ -1116,20 +1116,23 @@ button {
   margin-top: 20px;
 }
 
+.radio-set {
+  display: flex;
+  align-items: center;
+}
+
+.container-check {
+  display: flex;
+  align-items: center;
+}
+
 .form-outer form .page .field {
   width: 340px;
   height: 35px;
-  margin: 45px;
+  margin: 40px;
   display: flex;
   position: relative;
   color: black;
-}
-
-.select-field {
-  width: 330px !important;
-  height: 33px !important;
-  border-radius: 5px;
-  border: 1px solid lightgrey;
 }
 
 form .page .field .label {
