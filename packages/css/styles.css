@@ -20,7 +20,7 @@
   --text-color: hsl(var(--hue), 4%, 35%);
   --text-color-light: hsl(var(--hue), 4%, 55%);
   --body-color: hsl(var(--hue), 0%, 100%);
-  --input-color: hsl(var(--hue), 24%, 97%);
+  --input-color: hsl(var(--hue), 0%, 100%);
   --white-color: rgb(224, 224, 224);
   --scroll-bar-color: hsl(var(--hue), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue), 12%, 75%);
@@ -81,7 +81,7 @@ body.dark-theme {
   --first-color-light: hsl(var(--hue), 20%, 5%);
   --title-color: hsl(var(--hue), 4%, 95%);
   --text-color: hsl(var(--hue), 4%, 75%);
-  --input-color: hsl(var(--hue), 29%, 16%);
+  --input-color: hsl(var(--hue), 90%, 2%);
   --body-color: hsl(var(--hue), 100%, 0.5%);
   --scroll-bar-color: hsl(var(--hue), 12%, 48%);
   --scroll-thumb-color: hsl(var(--hue), 12%, 36%);
@@ -1194,15 +1194,15 @@ form .page .field button {
 }
 
 form .page .field input:focus {
-  border-bottom: 4px solid rgba(43, 255, 184, 0.8);
+  border-bottom: 4px solid var(--button-color-alt);
 }
 
 select:focus {
-  border-bottom: 4px solid rgba(43, 255, 184, 0.8);
+  border-bottom: 4px solid var(--button-color-alt);
 }
 
 #query-input:focus {
-  border-bottom: 4px solid rgba(43, 255, 184, 0.8);
+  border-bottom: 4px solid var(--button-color-alt);
 }
 
 #button {
@@ -1350,6 +1350,40 @@ form .page .btns button.next {
 
 .last-btns {
   margin-top: 110px !important;
+}
+
+#photo-input {
+  background-color: var(--body-color);
+}
+
+#photo-input:hover {
+  cursor: pointer;
+}
+
+#download-btn {
+  width: 97%;
+  height: 35px;
+  margin-bottom: 30px;
+  border: none;
+  padding: 10px 27px;
+  cursor: pointer;
+  font-size: 15px;
+  display: flex;
+  background: var(--input-color);
+  border-radius: 5px;
+  color: var(--text-color);
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+
+#download-btn:hover {
+  background: var(--first-color-light);
+}
+
+.fa-download {
+  padding: 8px;
 }
 
 @media (max-width: 768px) {
@@ -2260,6 +2294,7 @@ form .page .btns button.next {
 
   .container-f {
     background: rgba(255, 255, 255, 0.72);
+    min-width: 420px;
   }
 
   .section-f {
@@ -2466,7 +2501,7 @@ form .page .btns button.next {
   }
 
   .register {
-    min-width: 80vw;
+    min-width: 85vw;
     align-items: center;
     justify-content: center;
     margin-left: auto;
@@ -2475,7 +2510,8 @@ form .page .btns button.next {
 
   .container-f {
     background: rgba(255, 255, 255, 0.62);
-    min-width: 400px;
+    min-width: 420px;
+    font-size: var(--small-font-size);
   }
 
   .section-f {

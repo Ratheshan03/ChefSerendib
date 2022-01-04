@@ -875,6 +875,19 @@
                       />
                     </div>
 
+                    <div class="field">
+                      <div class="label">Rules and Regulations</div>
+                      <a
+                        href="./packages/pdf/Rules & Regulations.pdf"
+                        attributes-list
+                        download=""
+                        class="download-btn"
+                        id="download-btn"
+                        type="button"
+                        ><i class="fa fa-download"></i>Download</a
+                      >
+                    </div>
+
                     <div class="field btns">
                       <button class="prev-1 prev">Previous</button>
                       <button class="next-1 next" name="">Next</button>
@@ -940,12 +953,17 @@
                     </div>
                     <div class="field">
                       <div class="label">If Yes, State the culinary School</div>
-                      <input name="CCName" id="chef-school" type="text" />
+                      <input
+                        name="CCName"
+                        id="chef-school"
+                        type="text"
+                        placeholder="Enter your school"
+                      />
                     </div>
 
                     <div class="field btns Add-btn">
                       <button class="prev-2 prev">Previous</button>
-                      <button class="next-2 next">Next</button>
+                      <button class="next-2 next" id="next-2">Next</button>
                     </div>
                   </div>
 
@@ -975,7 +993,12 @@
                       <div class="label">
                         If Yes, State the name of the Hotel/Restaurant
                       </div>
-                      <input name="WorkPlace" id="chef-res" type="text" />
+                      <input
+                        name="WorkPlace"
+                        id="chef-res"
+                        type="text"
+                        placeholder="Enter your workplace"
+                      />
                     </div>
                     <div class="field">
                       <div class="label">
@@ -985,7 +1008,7 @@
                         name="Position"
                         id="chef-state"
                         type="text"
-                        placeholder="Type your position"
+                        placeholder="Enter your position"
                       />
                     </div>
                     <div class="field btns last-btns">
@@ -1273,22 +1296,25 @@
 
     <!--=============== Confirmation email ===============-->
     <script>
-      const myForm = document.getElementById("submit-form");
+      const nextbtn = document.getElementById("next-2");
       const inputfile1 = document.getElementById("photo-input");
       const inputfile2 = document.getElementById("vphoto-input");
 
-      $("#submit-form").submit((e) => {
-        e.preventDefault();
+      nextbtn.addEventListener("click", function () {
         const endpoint = "upload.php";
         const formData = new FormData();
 
-        formData.append("Potrait", inputfile1.files[0]);
-        formData.append("Vcard", inputfile2.files[0]);
+        formData.append("inpFile", inputfile1.files[0]);
+        // formData.append("inpFile", inputfile2.files[1]);
 
         fetch(endpoint, {
           method: "post",
           body: formData,
         }).catch(console.error);
+      });
+
+      $("#submit-form").submit((e) => {
+        e.preventDefault();
 
         $.ajax({
           url: "https://script.google.com/macros/s/AKfycbzMZ65bx15prZyQTGAw7Mp1zupycR4f9j5_Mx4RyAAw1U-M_sTDheofM2tZJYsn7XAx/exec",

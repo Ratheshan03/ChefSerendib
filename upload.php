@@ -1,7 +1,5 @@
 <?php
 
-var_dump($_FILES);
+$targetPath = "uploads/" . basename($_FILES["inpFile"]["name"]);
+move_uploaded_file($_FILES["inpFile"]["tmp_name"], $targetPath);
 
-foreach ($_FILES["myFiles"]["tmp_name"] as $key => $value){
-    $targetPath = "uploads/" . basename($_FILES["myFiles"]["name"])
-}
