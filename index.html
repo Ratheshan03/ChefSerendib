@@ -740,7 +740,7 @@
           <div class="video__content">
             <video id="video-file" poster="packages/img/Thumnail.jpeg" controls>
               <source
-                src="./packages/video/Final.mp4"
+                src=""
                 type="video/mp4"
                 class="video-screen"
               />
@@ -1131,10 +1131,9 @@
       <div class="footer__container container grid">
         <div class="footer__content grid">
           <div class="footer__data">
-            <h3 class="footer__title">Chef Serendib 2021/2022</h3>
+            <h3 class="footer__title">Chef Serendib </h3>
             <p class="footer__description">
-              A Hackathon that you'd never experienced <br />
-              before.
+              Sri Lanka’s biggest cooking competition in 2021/2022
             </p>
             <div>
               <a
@@ -1284,6 +1283,12 @@
     <!-- ========== gsap scroll  =========== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
+    <!-- ========= Fire base CDN ========= -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+
+    <!-- ========= Fire base script ========= -->
+    <script src="packages/js/mail.js"></script>
+
     <!--=============== MAIN JS ===============-->
     <script src="packages/js/main.js"></script>
 
@@ -1296,60 +1301,44 @@
 
     <!--=============== Confirmation email ===============-->
     <script>
-      const nextbtn = document.getElementById("next-2");
-      const inputfile1 = document.getElementById("photo-input");
-      const inputfile2 = document.getElementById("vphoto-input");
 
-      nextbtn.addEventListener("click", function () {
-        const endpoint = "upload.php";
-        const formData = new FormData();
+      // $("#submit-form").submit((e) => {
+      //   e.preventDefault();
 
-        formData.append("inpFile", inputfile1.files[0]);
-        // formData.append("inpFile", inputfile2.files[1]);
-
-        fetch(endpoint, {
-          method: "post",
-          body: formData,
-        }).catch(console.error);
-      });
-
-      $("#submit-form").submit((e) => {
-        e.preventDefault();
-
-        $.ajax({
-          url: "https://script.google.com/macros/s/AKfycbzMZ65bx15prZyQTGAw7Mp1zupycR4f9j5_Mx4RyAAw1U-M_sTDheofM2tZJYsn7XAx/exec",
-          data: $("#submit-form").serialize(),
-          method: "post",
-          success: function (response) {
-            Swal.fire({
-              position: "center",
-              icon: "success",
-              title: "Registration Successful",
-              footer: "<p>Please be aware of our future emails.</p>",
-              showConfirmButton: false,
-              showCancelButton: false,
-              background: "#edfffc",
-              timer: 5000,
-            });
-            document.getElementById("submit-form").reset();
-            setTimeout(function () {
-              window.location.reload();
-            }, 5000);
-          },
-          error: function (err) {
-            Swal.fire({
-              icon: "error",
-              title: "Oops...",
-              text: "Something went wrong!",
-              footer: "<p>Please check the missing fields</p>",
-              background: "#edfffc",
-              showCancelButton: false,
-              color: "fff",
-              timer: 6000,
-            });
-          },
-        });
-      });
+      //   $.ajax({
+      //     url: "https://script.google.com/macros/s/AKfycbzMZ65bx15prZyQTGAw7Mp1zupycR4f9j5_Mx4RyAAw1U-M_sTDheofM2tZJYsn7XAx/exec",
+      //     data: $("#submit-form").serialize(),
+      //     method: "post",
+      //     success: function (response) {
+      //       Swal.fire({
+      //         position: "center",
+      //         icon: "success",
+      //         title: "Registration Successful",
+      //         footer: "<p>Please be aware of our future emails.</p>",
+      //         showConfirmButton: false,
+      //         showCancelButton: false,
+      //         background: "#edfffc",
+      //         timer: 5000,
+      //       });
+      //       document.getElementById("submit-form").reset();
+      //       setTimeout(function () {
+      //         window.location.reload();
+      //       }, 5000);
+      //     },
+      //     error: function (err) {
+      //       Swal.fire({
+      //         icon: "error",
+      //         title: "Oops...",
+      //         text: "Something went wrong!",
+      //         footer: "<p>Please check the missing fields</p>",
+      //         background: "#edfffc",
+      //         showCancelButton: false,
+      //         color: "fff",
+      //         timer: 6000,
+      //       });
+      //     },
+      //   });
+      // });
     </script>
   </body>
 </html>

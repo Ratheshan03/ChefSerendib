@@ -756,7 +756,7 @@ button {
   background-color: var(--first-color-alt);
   color: #fff;
   padding: 0.5rem 0.75rem;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   font-size: var(--h2-font-size);
   margin-bottom: var(--mb-1-5);
   transition: 0.3s;
