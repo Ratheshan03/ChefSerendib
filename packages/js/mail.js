@@ -1,64 +1,96 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyBVpDfGp6MGFAJ1uNILRn6aowjaeFatGvo",
-  authDomain: "chefserendib-32a86.firebaseapp.com",
-  databaseURL: "https://chefserendib-32a86-default-rtdb.firebaseio.com",
-  projectId: "chefserendib-32a86",
-  storageBucket: "chefserendib-32a86.appspot.com",
-  messagingSenderId: "1072885979192",
-  appId: "1:1072885979192:web:f03f5c507bef40e4faaecd",
-  measurementId: "G-X1GX7V9J7X",
+  apiKey: "AIzaSyCgNPUBQjYOgFpnf7iiv0F2q31CXD3iVI4",
+  authDomain: "chefserendib-2da48.firebaseapp.com",
+  databaseURL: "https://chefserendib-2da48-default-rtdb.firebaseio.com",
+  projectId: "chefserendib-2da48",
+  storageBucket: "chefserendib-2da48.appspot.com",
+  messagingSenderId: "162955003828",
+  appId: "1:162955003828:web:44f981a00c2604fe7a94e1",
+  measurementId: "G-QDPCH4KL2R",
 };
 
 // initialize firebase
 firebase.initializeApp(firebaseConfig);
-let firestore = firebase.firestore();
 
-const db = firestore.collection("fomData");
+var responseDB = firebase.database().ref("responses");
 
 document.getElementById("submit-form").addEventListener("submit", submitForm);
 
 function submitForm(e) {
   e.preventDefault();
-  let name = document.getElementById("name-input");
-  let email = document.getElementById("email-input");
-  let address = document.getElementById("address-input");
-  let number = document.getElementById("contact-Number");
-  let age = document.getElementById("age-input");
-  let userphoto = document.getElementById("photo-input");
-  let vyes = document.getElementById("vaccination-yes");
-  let vno = document.getElementById("vaccination-no");
-  let vcardphoto = document.getElementById("vphoto-input");
-  let chefyes = document.getElementById("chef-yes");
-  let chefno = document.getElementById("chef-no");
-  let chefschool = document.getElementById("chef-school");
-  let chefsyes = document.getElementById("chefs-yes");
-  let chefsno = document.getElementById("chefs-no");
-  let reschef = document.getElementById("chef-res");
-  let resname = document.getElementById("chef-state");
+  var name = document.querySelector("#name-input").value;
+  var email = document.querySelector("#email-input").value;
+  var address = document.querySelector("#address-input").value;
+  var number = document.querySelector("#contact-Number").value;
+  var age = document.querySelector("#age-input").value;
+  var userphoto = document.querySelector("#photo-input").value;
+  var vyes = document.querySelector("#vaccination-yes").value;
+  var vno = document.querySelector("#vaccination-no").value;
+  var vcardphoto = document.querySelector("#vphoto-input").value;
+  var chefyes = document.querySelector("#chef-yes").value;
+  var chefno = document.querySelector("#chef-no").value;
+  var chefschool = document.querySelector("#chef-school").value;
+  var chefsyes = document.querySelector("#chefs-yes").value;
+  var chefsno = document.querySelector("#chefs-no").value;
+  var resname = document.querySelector("#chef-res").value;
+  var respos = document.querySelector("#chef-pos").value;
 
-  db.doc()
-    .set({
-      fullname: name,
-      Email: email,
-      Address: address,
-      Number: number,
-      Age: age,
-      UserPhoto: userphoto,
-      vaccinationYes: vyes,
-      vaccinationNo: vno,
-      vaccinationCard: vcardphoto,
-      chefYes: chefyes,
-      chefNo: chefno,
-      chefSchool: chefschool,
-      chefsYes: chefsyes,
-      chefsNo: chefsno,
-      resChef: reschef,
-      resName: resname,
-    })
-    .then(() => {
-      console.log("Data saved");
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  saveMessages(
+    name,
+    email,
+    address,
+    number,
+    age,
+    userphoto,
+    vyes,
+    vno,
+    vcardphoto,
+    chefyes,
+    chefno,
+    chefschool,
+    chefsyes,
+    chefsno,
+    resname,
+    respos
+  );
 }
+
+const saveMessages = (
+  name,
+  email,
+  address,
+  number,
+  age,
+  userphoto,
+  vyes,
+  vno,
+  vcardphoto,
+  chefyes,
+  chefno,
+  chefschool,
+  chefsyes,
+  chefsno,
+  resname,
+  respos
+) => {
+  var newResponseDB = responseDB.push();
+
+  newResponseDB.set({
+    Name: name,
+    Email: email,
+    Address: address,
+    Number: number,
+    Age: age,
+    UserPhoto: userphoto,
+    ISvaccinatedYes: vyes,
+    ISvaccinatedNo: vno,
+    vaccinationCard: vcardphoto,
+    ISSchooledYes: chefyes,
+    ISSchooledNo: chefno,
+    School: chefschool,
+    IsChefYes: chefsyes,
+    IsChefNo: chefsno,
+    ResName: resname,
+    ResPostions: respos,
+  });
+};
