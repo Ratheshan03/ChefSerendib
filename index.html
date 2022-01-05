@@ -644,7 +644,6 @@
                 <h3 class="questions__item-title">
                   What happens if we cant complete cooking within the allocated
                   time limit?
-                 
                 </h3>
               </header>
 
@@ -652,7 +651,6 @@
                 <p class="questions__description">
                   The contestant will be disqualified and wont be able to
                   participate in the next round.
-                  
                 </p>
               </div>
             </div>
@@ -739,11 +737,7 @@
 
           <div class="video__content">
             <video id="video-file" poster="packages/img/Thumnail.jpeg" controls>
-              <source
-                src=""
-                type="video/mp4"
-                class="video-screen"
-              />
+              <source src="" type="video/mp4" class="video-screen" />
             </video>
 
             <!-- <button class="button button--flex video__button" id="video-button">
@@ -1002,13 +996,16 @@
                         placeholder="Enter your workplace"
                       />
                     </div>
-
                     <div class="field">
-                      <label class="container-check"></label>
-                        I agree to the Terms and Conditions
-                        <input type="checkbox" checked="checked" />
-                        <span class="checkmark"></span>
-                      </label>
+                      <div class="label">
+                        If you are a Chef, State the position
+                      </div>
+                      <input
+                        name="WorkPosition"
+                        id="chef-pos"
+                        type="text"
+                        placeholder="Enter your position"
+                      />
                     </div>
 
                     <div class="field btns last-btns">
@@ -1131,7 +1128,7 @@
       <div class="footer__container container grid">
         <div class="footer__content grid">
           <div class="footer__data">
-            <h3 class="footer__title">Chef Serendib </h3>
+            <h3 class="footer__title">Chef Serendib</h3>
             <p class="footer__description">
               Sri Lanka's biggest cooking competition in 2021/2022
             </p>
@@ -1284,8 +1281,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
     <!-- ========= Fire base CDN ========= -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
 
     <!-- ========= Fire base script ========= -->
     <script src="packages/js/mail.js"></script>
@@ -1302,7 +1298,6 @@
 
     <!--=============== Confirmation email ===============-->
     <script>
-
       $("#submit-form").submit((e) => {
         e.preventDefault();
 
@@ -1322,7 +1317,9 @@
               timer: 5000,
             });
             document.getElementById("submit-form").reset();
-            
+            setTimeout(function () {
+              window.location.reload();
+            }, 4000);
           },
           error: function (err) {
             Swal.fire({
