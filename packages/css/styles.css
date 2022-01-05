@@ -77,33 +77,23 @@
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
-  --first-color-second: hsl(var(--hue), 8%, 20%);
-  --first-color-light: hsl(var(--hue), 20%, 5%);
-  --title-color: hsl(var(--hue), 4%, 95%);
-  --text-color: hsl(var(--hue), 4%, 75%);
-  --input-color: hsl(var(--hue), 90%, 2%);
-  --body-color: hsl(var(--hue), 100%, 0.5%);
-  --scroll-bar-color: hsl(var(--hue), 12%, 48%);
-  --scroll-thumb-color: hsl(var(--hue), 12%, 36%);
-  --container-color: hsl(var(--hue), 8%, 16%);
+  --first-color: hsl(var(--hue), 24%, 32%);
+  --first-color-second: hsl(var(--hue), 24%, 28%);
+  --first-color-alt: hsl(var(--hue), 24%, 28%);
+  --first-color-light: hsl(var(--hue), 24%, 66%);
+  --first-color-lighten: hsl(var(--hue), 24%, 92%);
+  --title-color: hsl(var(--hue), 4%, 15%);
+  --text-color: hsl(var(--hue), 4%, 35%);
+  --text-color-light: hsl(var(--hue), 4%, 55%);
+  --body-color: hsl(var(--hue), 0%, 100%);
+  --input-color: hsl(var(--hue), 0%, 100%);
+  --white-color: rgb(224, 224, 224);
+  --scroll-bar-color: hsl(var(--hue), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue), 12%, 75%);
+  --button-color: rgb(236, 173, 0);
+  --button-color-alt: rgb(253, 186, 0);
+  --container-color: #fff;
 }
-
---first-color: hsl(var(--hue), 24%, 32%);
---first-color-second: hsl(var(--hue), 24%, 28%);
---first-color-alt: hsl(var(--hue), 24%, 28%);
---first-color-light: hsl(var(--hue), 24%, 66%);
---first-color-lighten: hsl(var(--hue), 24%, 92%);
---title-color: hsl(var(--hue), 4%, 15%);
---text-color: hsl(var(--hue), 4%, 35%);
---text-color-light: hsl(var(--hue), 4%, 55%);
---body-color: hsl(var(--hue), 0%, 100%);
---input-color: hsl(var(--hue), 0%, 100%);
---white-color: rgb(224, 224, 224);
---scroll-bar-color: hsl(var(--hue), 12%, 90%);
---scroll-thumb-color: hsl(var(--hue), 12%, 75%);
---button-color: rgb(236, 173, 0);
---button-color-alt: rgb(253, 186, 0);
---container-color: #fff;
 
 /*========== Button Dark/Light ==========*/
 .header__dark {
@@ -2195,7 +2185,7 @@ form .page .btns button.next {
   }
 
   .home {
-    /* background: url(../img/P.png); */
+    background: url(../img/main.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
