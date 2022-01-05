@@ -230,7 +230,7 @@ input {
   left: 0;
   z-index: var(--z-fixed);
   background-color: rgba(63, 52, 14, 0.45);
-  box-shadow: -2px 5px 9px 5px rgba(36, 35, 31, 0.55);
+  box-shadow: -2px 5px 9px 5px rgba(12, 12, 12, 0.55);
 }
 
 /*=============== NAV ===============*/
@@ -948,7 +948,6 @@ button {
 }
 
 .ex-co {
-  position: relative;
   display: grid;
 }
 
@@ -982,7 +981,7 @@ button {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
   margin-bottom: 30px;
   padding: 0;
-  max-height: 280px;
+  max-height: 300px;
 }
 
 .experience__data .data__description {
@@ -1717,6 +1716,10 @@ form .page .btns button.next {
     padding: 0;
   }
 
+  .image__overlay {
+    width: 320px;
+  }
+
   .home__img {
     display: flex;
     align-items: center;
@@ -1787,10 +1790,6 @@ form .page .btns button.next {
     align-content: center;
   }
 
-  .image__overlay {
-    max-height: 255px;
-  }
-
   .Merch-img {
     height: 30vh;
     align-items: center;
@@ -1850,10 +1849,6 @@ form .page .btns button.next {
   .experience__img,
   .video__container {
     padding: 0;
-  }
-
-  .image__overlay {
-    max-height: 255px;
   }
 
   .video__container {
@@ -1969,11 +1964,11 @@ form .page .btns button.next {
   }
 
   .image__overlay {
-    max-height: 255px;
+    width: 350px;
   }
 
   .steps__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .video__container {
@@ -2089,6 +2084,10 @@ form .page .btns button.next {
   .nav__logo {
     width: 150px;
     height: 150px;
+  }
+
+  .image__overlay {
+    width: 390px;
   }
 
   .Merch-img {
@@ -2322,17 +2321,17 @@ form .page .btns button.next {
 
   .ex-co {
     position: relative;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 2fr);
   }
 
   .image__overlay {
     margin-right: 20px;
-    max-height: 265px;
+    width: 420px;
   }
 
   .experience__img-one {
     transition: var(--img-transition);
-    height: 265px;
+    height: 320px;
   }
 
   .Merch-img {
@@ -2539,8 +2538,12 @@ form .page .btns button.next {
   }
 
   .image__overlay {
-    margin-right: 35px;
-    max-height: 280px;
+    width: 450px;
+    padding: 0px;
+  }
+
+  .experience__img-one {
+    height: 325px;
   }
 
   .merch__bg {
@@ -2641,10 +2644,9 @@ form .page .btns button.next {
   .progress-bar {
     margin-bottom: -25px !important;
   }
-
   .image__overlay {
-    margin-right: 35px;
-    max-height: 280px;
+    width: 480px;
+    padding: 0px;
   }
 
   .merch__container {
@@ -2717,7 +2719,7 @@ form .page .btns button.next {
 
   .image__overlay {
     margin-right: 35px;
-    max-height: 280px;
+    max-height: 480px;
   }
 
   .merch__container {
