@@ -11,90 +11,54 @@ const firebaseConfig = {
 
 // initialize firebase
 firebase.initializeApp(firebaseConfig);
+let firestore = firebase.firestore();
 
-// reference your database
-var chefSerendibDB = firebase.database().ref("ChefSerendib");
+const db = firestore.collection("fomData");
 
 document.getElementById("submit-form").addEventListener("submit", submitForm);
 
 function submitForm(e) {
   e.preventDefault();
-  var name = getElementValue("name-input");
-  var email = getElementValue("email-input");
-  var address = getElementValue("address-input");
-  var number = getElementValue("contact-Number");
-  var age = getElementValue("age-input");
-  var userphoto = getElementValue("photo-input");
-  var vyes = getElementValue("vaccination-yes");
-  var vno = getElementValue("vaccination-no");
-  var vcardphoto = getElementValue("vphoto-input");
-  var chefyes = getElementValue("chef-yes");
-  var chefno = getElementValue("chef-no");
-  var chefschool = getElementValue("chef-school");
-  var chefsyes = getElementValue("chefs-yes");
-  var chefsno = getElementValue("chefs-no");
-  var reschef = getElementValue("chef-res");
-  var resname = getElementValue("chef-state");
+  let name = document.getElementById("name-input");
+  let email = document.getElementById("email-input");
+  let address = document.getElementById("address-input");
+  let number = document.getElementById("contact-Number");
+  let age = document.getElementById("age-input");
+  let userphoto = document.getElementById("photo-input");
+  let vyes = document.getElementById("vaccination-yes");
+  let vno = document.getElementById("vaccination-no");
+  let vcardphoto = document.getElementById("vphoto-input");
+  let chefyes = document.getElementById("chef-yes");
+  let chefno = document.getElementById("chef-no");
+  let chefschool = document.getElementById("chef-school");
+  let chefsyes = document.getElementById("chefs-yes");
+  let chefsno = document.getElementById("chefs-no");
+  let reschef = document.getElementById("chef-res");
+  let resname = document.getElementById("chef-state");
 
-  saveMessages(
-    name,
-    email,
-    address,
-    number,
-    age,
-    userphoto,
-    vyes,
-    vno,
-    vcardphoto,
-    chefyes,
-    chefno,
-    chefschool,
-    chefsyes,
-    chefsno,
-    reschef,
-    resname
-  );
+  db.doc()
+    .set({
+      fullname: name,
+      Email: email,
+      Address: address,
+      Number: number,
+      Age: age,
+      UserPhoto: userphoto,
+      vaccinationYes: vyes,
+      vaccinationNo: vno,
+      vaccinationCard: vcardphoto,
+      chefYes: chefyes,
+      chefNo: chefno,
+      chefSchool: chefschool,
+      chefsYes: chefsyes,
+      chefsNo: chefsno,
+      resChef: reschef,
+      resName: resname,
+    })
+    .then(() => {
+      console.log("Data saved");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
-
-const saveMessages = (
-  name,
-  email,
-  address,
-  number,
-  age,
-  userphoto,
-  vyes,
-  vno,
-  vcardphoto,
-  chefyes,
-  chefno,
-  chefschool,
-  chefsyes,
-  chefsno,
-  reschef,
-  resname
-) => {
-  var newChefSerendib = chefSerendibDB.push();
-  newChefSerendib.set({
-    name: name,
-    email: email,
-    address: address,
-    number: number,
-    age: age,
-    userphoto: userphoto,
-    vyes: vyes,
-    vno: vno,
-    vcardphoto: vcardphoto,
-    chefyes: chefyes,
-    chefno: chefno,
-    chefschool: chefschool,
-    chefsyes: chefsyes,
-    chefsno: chefsno,
-    reschef: reschef,
-    resname: resname,
-  });
-};
-
-const getElementValue = (id) => {
-  return document.getElementById(id).nodeValue;
-};
