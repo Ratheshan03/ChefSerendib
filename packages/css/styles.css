@@ -222,8 +222,8 @@ input {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: rgba(14, 55, 63, 0.45);
-  box-shadow: -2px 5px 9px 5px rgba(31, 32, 36, 0.55);
+  background-color: rgba(63, 52, 14, 0.45);
+  box-shadow: -2px 5px 9px 5px rgba(36, 35, 31, 0.55);
 }
 
 /*=============== NAV ===============*/
@@ -1977,7 +1977,7 @@ form .page .btns button.next {
 
   .nav__logo {
     width: 95px;
-    height: 80px;
+    height: 95px;
   }
 
   .register {
@@ -2080,8 +2080,8 @@ form .page .btns button.next {
   }
 
   .nav__logo {
-    width: 100px;
-    height: 85px;
+    width: 150px;
+    height: 150px;
   }
 
   .Merch-img {
@@ -2146,7 +2146,7 @@ form .page .btns button.next {
 
   .nav__logo {
     width: 170px;
-    height: 80px;
+    height: 170px;
   }
   .change-theme-name {
     display: none;
@@ -2178,7 +2178,7 @@ form .page .btns button.next {
   }
 
   .home {
-    background: url(../img/P.png);
+    /* background: url(../img/P.png); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -2364,8 +2364,9 @@ form .page .btns button.next {
   }
 
   .nav__logo {
-    width: 180px;
-    height: 75px;
+    width: 210px;
+    height: 210px;
+    margin-top: 17px;
   }
 
   .home__container {
