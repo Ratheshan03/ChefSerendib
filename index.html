@@ -649,26 +649,29 @@
       </section> -->
 
       <!--==================== VIDEO ====================-->
-      <!-- <section class="video section">
+      <section class="video section">
         <h2 class="section__title">OFFICIAL TRAILER</h2>
 
         <div class="video__container container">
           <p class="video__description">
-            Fasten Your Seatbelts for Chef Serandib 2021.
+            Fasten Your Seatbelts for Chef Serandib 2022
           </p>
 
           <div class="video__content">
-            <video id="video-file" poster="packages/img/Thumnail.jpeg" controls>
-              <source src="" type="video/mp4" class="video-screen" />
+            <video id="video-file" poster="./packages/img/main.jpeg" controls>
+              <source
+                src="./packages/img/teaser.mp4"
+                type="video/mp4"
+                class="video-screen"
+              />
             </video>
 
             <!-- <button class="button button--flex video__button" id="video-button">
                             <i class="ri-play-line video__button-icon" id="video-icon"></i>
                         </button> -->
-      <!-- </div>
+          </div>
         </div>
-      </section> -->
-      -->
+      </section>
 
       <!--==================== REGISTER Form ====================-->
       <section class="register section" id="register">
@@ -1244,7 +1247,7 @@
         e.preventDefault();
 
         $.ajax({
-          url: "https://script.google.com/macros/s/AKfycbzhIB2OLDmx6WYp_AyWZ8FqTM7ViI7Rn02vBEyspYSv_0qo8KRlFIaW259BNQjoEaGIRA/exec",
+          url: "https://script.google.com/macros/s/AKfycbzwKVThVtGyYQCsKAO_Wzl2nKEbiHno4narM4-rh0j5lp5HqfrirjQefaej1jXX8FxHPQ/exec",
           data: $("#submit-form").serialize(),
           method: "post",
           success: function (response) {
