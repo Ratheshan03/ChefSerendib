@@ -2167,10 +2167,11 @@ form .page .btns button.next {
   }
 
   .home {
-    background: url(../img/main.jpeg);
+    background: url(../img/P-main.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    height: 760px;
   }
 
   .home__img {
