@@ -1091,15 +1091,15 @@ button {
 }
 
 .radio {
-  margin-left: 20px;
-  margin-top: 10px;
+  margin-left: 63px;
+  margin-top: 0px;
 }
 
 .radio-label {
   font-size: smaller;
   font-weight: 600;
-  margin-right: 100px;
-  margin-top: 20px;
+  margin-right: 60px;
+  margin-top: 10px;
 }
 
 .radio-set {
@@ -1338,7 +1338,7 @@ form .page .btns button.next {
 }
 
 .last-btns {
-  margin-top: 110px !important;
+  margin-top: 70px !important;
 }
 
 #photo-input {
