@@ -14,6 +14,23 @@ firebase.initializeApp(firebaseConfig);
 
 var responseDB = firebase.database().ref("responses");
 
+var fileButton1 = document.getElementById("photo-input");
+var fileButton2 = document.getElementById("vphoto-input");
+fileButton1.addEventListener("change", function (e) {
+  var file = e.target.files[0];
+  var storageRef = firebase.storage().ref("img/" + file.name);
+  var task = storageRef.put(file);
+  task.on(
+    "state_changed",
+    function progress(snapshot) {
+      var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      uploader.value = percentage;
+    },
+    function error(err) {},
+    function complete() {}
+  );
+});
+
 document.getElementById("submit-form").addEventListener("submit", submitForm);
 
 function submitForm(e) {
