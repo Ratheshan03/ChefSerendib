@@ -25,7 +25,7 @@
   --scroll-bar-color: hsl(var(--hue), 10%, 12%);
   --scroll-thumb-color: hsl(var(--hue), 12%, 26%);
   --button-color: rgb(236, 173, 0);
-  --button-color-alt: rgb(253, 186, 0);
+  --button-color-alt: rgb(214, 158, 4);
   --container-color: hsl(var(--hue), 8%, 16%);
 
   /*========== Font and typography ==========*/
