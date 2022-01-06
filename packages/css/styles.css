@@ -22,8 +22,8 @@
   --body-color: hsl(var(--hue), 100%, 0.5%);
   --input-color: hsl(var(--hue), 90%, 2%);
   --white-color: rgb(224, 224, 224);
-  --scroll-bar-color: hsl(var(--hue), 12%, 48%);
-  --scroll-thumb-color: hsl(var(--hue), 12%, 36%);
+  --scroll-bar-color: hsl(var(--hue), 10%, 12%);
+  --scroll-thumb-color: hsl(var(--hue), 12%, 26%);
   --button-color: rgb(236, 173, 0);
   --button-color-alt: rgb(253, 186, 0);
   --container-color: hsl(var(--hue), 8%, 16%);
@@ -73,26 +73,6 @@
     --small-font-size: 0.875rem;
     --smaller-font-size: 0.813rem;
   }
-}
-
-/*========== Variables Dark theme ==========*/
-body.dark-theme {
-  --first-color: hsl(var(--hue), 24%, 32%);
-  --first-color-second: hsl(var(--hue), 24%, 28%);
-  --first-color-alt: hsl(var(--hue), 24%, 28%);
-  --first-color-light: hsl(var(--hue), 24%, 66%);
-  --first-color-lighten: hsl(var(--hue), 24%, 92%);
-  --title-color: hsl(var(--hue), 4%, 15%);
-  --text-color: hsl(var(--hue), 4%, 35%);
-  --text-color-light: hsl(var(--hue), 4%, 55%);
-  --body-color: hsl(var(--hue), 0%, 100%);
-  --input-color: hsl(var(--hue), 0%, 100%);
-  --white-color: rgb(224, 224, 224);
-  --scroll-bar-color: hsl(var(--hue), 12%, 90%);
-  --scroll-thumb-color: hsl(var(--hue), 12%, 75%);
-  --button-color: rgb(236, 173, 0);
-  --button-color-alt: rgb(253, 186, 0);
-  --container-color: #fff;
 }
 
 /*========== Button Dark/Light ==========*/
@@ -2565,7 +2545,7 @@ form .page .btns button.next {
 
   .merch__form {
     height: 50vh;
-    width: 80vw;
+    width: 70vw;
     background-color: var(--button-color);
     justify-items: center;
     justify-content: center;
@@ -2662,7 +2642,7 @@ form .page .btns button.next {
 
   .merch__form {
     height: 52vh;
-    width: 80vw;
+    width: 65vw;
     background-color: var(--button-color);
     justify-items: center;
     justify-content: center;
