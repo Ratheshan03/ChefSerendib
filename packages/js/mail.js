@@ -14,6 +14,7 @@ firebase.initializeApp(firebaseConfig);
 
 var responseDB = firebase.database().ref("responses");
 
+var uploader = document.getElementById("uploader1");
 var fileButton1 = document.getElementById("photo-input");
 var fileButton2 = document.getElementById("vphoto-input");
 fileButton1.addEventListener("change", function (e) {

@@ -784,6 +784,7 @@
                       <div class="label">
                         Upload a Formal Picture Of yourself
                       </div>
+                      <progress id="uploader1" value="0" max="100">0%</progress>
                       <input
                         name="Potrait"
                         id="photo-input"
@@ -797,7 +798,7 @@
                     <div class="field">
                       <div class="label">Rules and Regulations</div>
                       <a
-                        href="./packages/pdf/Rules & Regulations.pdf"
+                        href="./packages/pdf/Rules and Regulations.pdf"
                         attributes-list
                         download=""
                         class="download-btn"
@@ -839,6 +840,7 @@
                       <div class="label">
                         Attach the Image of your vaccination card
                       </div>
+                      <progress id="uploader2" value="0" max="100">0%</progress>
                       <input
                         name="Vcard"
                         id="vphoto-input"
@@ -1230,7 +1232,7 @@
         e.preventDefault();
 
         $.ajax({
-          url: "https://script.google.com/macros/s/AKfycbzMZ65bx15prZyQTGAw7Mp1zupycR4f9j5_Mx4RyAAw1U-M_sTDheofM2tZJYsn7XAx/exec",
+          url: "https://script.google.com/macros/s/AKfycbzhIB2OLDmx6WYp_AyWZ8FqTM7ViI7Rn02vBEyspYSv_0qo8KRlFIaW259BNQjoEaGIRA/exec",
           data: $("#submit-form").serialize(),
           method: "post",
           success: function (response) {
