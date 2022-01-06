@@ -1724,6 +1724,7 @@ form .page .btns button.next {
   .nav__logo {
     width: 90px;
     height: 75px;
+    margin-top: 5px;
   }
 
   #countdown-title {
@@ -1958,8 +1959,9 @@ form .page .btns button.next {
   }
 
   .nav__logo {
-    width: 95px;
-    height: 95px;
+    width: 100px;
+    height: 100px;
+    margin-top: 8px;
   }
 
   .register {
@@ -2064,6 +2066,7 @@ form .page .btns button.next {
   .nav__logo {
     width: 150px;
     height: 150px;
+    margin-top: 12px;
   }
 
   .image__overlay {
