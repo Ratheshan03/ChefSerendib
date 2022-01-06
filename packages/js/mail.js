@@ -13,40 +13,63 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var responseDB = firebase.database().ref("responses");
+var selectedFile;
+var selectedFile2;
+var username = document.getElementById("name-input");
 
-var uploader = document.getElementById("uploader1");
-var uploader2 = document.getElementById("uploader2");
-var fileButton1 = document.getElementById("photo-input");
-var fileButton2 = document.getElementById("vphoto-input");
-fileButton1.addEventListener("change", function (e) {
-  var file = e.target.files[0];
-  var storageRef = firebase.storage().ref("img/" + file.name);
-  var task = storageRef.put(file);
-  task.on(
-    "state_changed",
-    function progress(snapshot) {
-      var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      uploader.value = percentage;
-    },
-    function error(err) {},
-    function complete() {}
-  );
+$("#photo-input").on("change", function (e) {
+  selectedFile = e.target.files[0];
 });
 
-fileButton2.addEventListener("change", function (e) {
-  var file = e.target.files[0];
-  var storageRef = firebase.storage().ref("img/" + file.name);
-  var task = storageRef.put(file);
-  task.on(
-    "state_changed",
-    function progress(snapshot) {
-      var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      uploader2.value = percentage;
-    },
-    function error(err) {},
-    function complete() {}
-  );
+$("#vphoto-input").on("change", function (e) {
+  selectedFile2 = e.target.files[0];
 });
+
+function uploadFileUserPhoto() {
+  var filename = selectedFile.name;
+  var storageRef = firebase.storage().ref("Portraits/" + filename);
+  var uploadTask = storageRef.put(selectedFile);
+
+  uploadTask.on(
+    "state_changed",
+    function (snapshot) {},
+    function (error) {},
+    function () {
+      var postKey = firebase.database().ref("Posts/").push().key;
+      var downloadURL = uploadTask.snapshot.downloadURL;
+      var updates = {};
+      var postData = {
+        url: downloadURL,
+        name: $("username").val(),
+      };
+      updates["/Posts/" + postKey] = postData;
+      firebase.database().ref().update(updates);
+    }
+  );
+}
+
+function uploadFileVacPhoto() {
+  var filename = selectedFile2.name;
+  var storageRef = firebase.storage().ref("VaccinationCards/" + filename);
+  var uploadTask = storageRef.put(selectedFile);
+
+  uploadTask.on(
+    "state_changed",
+    function (snapshot) {},
+    function (error) {},
+    function () {
+      var postKey = firebase.database().ref("Cards/").push().key;
+      var downloadURL = uploadTask.snapshot.downloadURL;
+      var updates = {};
+      var postData = {
+        url: downloadURL,
+        name: $("username").val(),
+      };
+      updates["/Cards/" + postKey] = postData;
+      firebase.database().ref().update(updates);
+    }
+  );
+}
 
 document.getElementById("submit-form").addEventListener("submit", submitForm);
 
@@ -87,6 +110,9 @@ function submitForm(e) {
     resname,
     respos
   );
+
+  uploadFileUserPhoto();
+  uploadFileVacPhoto();
 }
 
 const saveMessages = (
