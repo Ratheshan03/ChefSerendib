@@ -2041,7 +2041,7 @@ form .page .btns button.next {
 
   .countdown-m {
     grid-template-columns: repeat(1, 1fr);
-    margin-bottom: -90px;
+    margin-bottom: -60px;
   }
 
   .countdown-block {
@@ -2137,12 +2137,7 @@ form .page .btns button.next {
     width: 170px;
     height: 170px;
   }
-  .change-theme-name {
-    display: none;
-  }
-  .change-theme {
-    color: var(--white-color);
-  }
+
   li .active-link a::before {
     background-color: var(--white-color);
   }
@@ -2206,7 +2201,7 @@ form .page .btns button.next {
 
   .countdown-m {
     grid-template-columns: repeat(1, 1fr);
-    margin-bottom: -90px;
+    margin-bottom: -120px;
   }
 
   .countdown-block {
@@ -2346,6 +2341,11 @@ form .page .btns button.next {
 @media screen and (min-width: 1024px) {
   .section {
     padding: 4.8rem 0 2.5rem;
+    margin-top: 5rem;
+  }
+
+  .steps {
+    margin-top: 0px !important;
   }
 
   .container {
@@ -2380,7 +2380,7 @@ form .page .btns button.next {
 
   .countdown-m {
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: -20px;
+    margin-bottom: -180px;
   }
 
   .countdown-block {
@@ -2456,11 +2456,11 @@ form .page .btns button.next {
   }
 
   .video__container {
-    grid-template-columns: 0.7fr;
+    grid-template-columns: 0.6fr;
   }
 
   .video__description {
-    padding: 0 8rem;
+    padding: 0 5rem;
   }
 
   .container-f {
@@ -2562,6 +2562,13 @@ form .page .btns button.next {
 }
 
 @media screen and (min-width: 1200px) {
+  .section {
+    margin-top: 5rem;
+  }
+
+  .steps {
+    margin-top: 0px !important;
+  }
   .container {
     max-width: 1024px;
   }
@@ -2572,7 +2579,7 @@ form .page .btns button.next {
 
   .countdown-m {
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: -20px;
+    margin-bottom: -180px;
   }
 
   .countdown-block {
@@ -2645,8 +2652,8 @@ form .page .btns button.next {
   }
 
   .merch__form {
-    height: 52vh;
-    width: 65vw;
+    height: 55vh;
+    width: 70vw;
     background-color: var(--button-color);
     justify-items: center;
     justify-content: center;
@@ -2660,6 +2667,10 @@ form .page .btns button.next {
   .scrollup {
     right: 3rem;
   }
+
+  .video__content {
+    margin-left: 50px;
+  }
 }
 
 @media screen and (min-width: 1500px) {
@@ -2669,6 +2680,10 @@ form .page .btns button.next {
   .home__img {
     height: 740px;
     width: 100%;
+  }
+
+  .steps {
+    margin-top: 0px !important;
   }
 
   .register {
