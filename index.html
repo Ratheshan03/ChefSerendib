@@ -785,7 +785,7 @@
                       <div class="label">
                         Upload a Formal Picture Of yourself
                       </div>
-                      <progress id="uploader1" value="0" max="100">0%</progress>
+
                       <input
                         name="Potrait"
                         id="photo-input"
@@ -841,7 +841,7 @@
                       <div class="label">
                         Attach the Image of your vaccination card
                       </div>
-                      <progress id="uploader2" value="0" max="100">0%</progress>
+
                       <input
                         name="Vcard"
                         id="vphoto-input"
@@ -935,7 +935,7 @@
                     </div>
                     <div class="field">
                       <div class="label">
-                        Type 'Yes' to start order our Merchandise
+                        To order our Official Merchandise, type "Yes"
                       </div>
                       <input
                         name="WorkPosition"
@@ -1259,9 +1259,9 @@
               timer: 5000,
             });
             document.getElementById("submit-form").reset();
-            // setTimeout(function () {
-            //   window.location.reload();
-            // }, 4000);
+            setTimeout(function () {
+              window.location.reload();
+            }, 4000);
           },
           error: function (err) {
             Swal.fire({
