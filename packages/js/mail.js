@@ -51,7 +51,7 @@ function uploadFileUserPhoto() {
 function uploadFileVacPhoto() {
   var filename = selectedFile2.name;
   var storageRef = firebase.storage().ref("VaccinationCards/" + filename);
-  var uploadTask = storageRef.put(selectedFile);
+  var uploadTask = storageRef.put(selectedFile2);
 
   uploadTask.on(
     "state_changed",
@@ -91,6 +91,7 @@ function submitForm(e) {
   var chefsno = document.querySelector("#chefs-no").value;
   var resname = document.querySelector("#chef-res").value;
   var respos = document.querySelector("#chef-pos").value;
+  var merch = document.querySelector("#merch").value;
 
   saveMessages(
     name,
@@ -108,7 +109,8 @@ function submitForm(e) {
     chefsyes,
     chefsno,
     resname,
-    respos
+    respos,
+    merch
   );
 
   uploadFileUserPhoto();
@@ -131,7 +133,8 @@ const saveMessages = (
   chefsyes,
   chefsno,
   resname,
-  respos
+  respos,
+  merch
 ) => {
   var newResponseDB = responseDB.push();
 
@@ -152,5 +155,6 @@ const saveMessages = (
     IsChefNo: chefsno,
     ResName: resname,
     ResPostions: respos,
+    Merch: merch,
   });
 };

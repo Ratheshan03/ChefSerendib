@@ -2368,6 +2368,12 @@ form .page .btns button.next {
     font-size: 20px !important;
   }
 
+  .home__data {
+    align-self: flex-start;
+    margin-top: 100px !important;
+    margin-left: -20px;
+  }
+
   .home__info {
     width: 250px;
     grid-template-columns: 1fr 2fr;
